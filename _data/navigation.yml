@@ -1,0 +1,8 @@
+ main:
+   - title: "Home"
+     url: /
+   - title: "EditorConfig"
+     url: /editorconfig/coding-conventions
+   - title: "Contact"
+     url: /contact
+     
