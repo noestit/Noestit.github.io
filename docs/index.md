@@ -1,36 +1,31 @@
 ## Welcome to GitHub Pages
+# Noest GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/noestit/CodeGuidelines/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+> Codeguidelines and best-practices to help build readable, quality-code projects across frameworks, languages, platforms, etc. Made by the Noest team.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Codeguidelines agreed on by the Noest team to have alignment across projects and within a company.
+These range from multiple code languages such as Javascript and C# to frameworks and other subjects such as git, gitflow, etc...
 
-### Markdown
+These are mere guidelines proposed by us to follow, this to ensure code quality and readability. But overal to create solid structured small or vast repositories.
+Suggestions are always welcome and these guidelines can/will change over time.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## :dart: Motivation
+Developers tend to have there own ways of working with code, however when working in teams it's often recommended to follow some basic guidelines or best practices to maximize co-creation. Noest is a consultancy company, in order to make the conveyance as smooth as possible guidelines have to be followed. Because of these guidelines developers across languages/frameworks will share more basic principles making transitions faster and causing delays less prone to happen.
 
-```markdown
-Syntax highlighted code block
+## :muscle: Contributing
+1. Clone it
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
-# Header 1
-## Header 2
-### Header 3
+## META
+Noest - [@teamnoest](https://twitter.com/teamnoest) - [info@noest.it](mailto:info@noest.it)
 
-- Bulleted
-- List
+**Build with [GitHub Pages](https://pages.github.com/)**
 
-1. Numbered
-2. List
+MIT © [Noest](https://www.noest.it/)
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/noestit/CodeGuidelines/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
