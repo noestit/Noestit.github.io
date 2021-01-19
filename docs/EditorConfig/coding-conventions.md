@@ -2,7 +2,7 @@
 tags: docs_editorconfig
 index: 2
 title: 'EditorConfig Coding conventions'
-permalink: /editorconfig/codingconventions
+permalink: /editorconfig/coding-conventions
 ---
 
 ## .NET Coding Conventions

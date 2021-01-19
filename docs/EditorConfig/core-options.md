@@ -2,7 +2,7 @@
 tags: docs_editorconfig
 index: 1
 title: 'EditorConfig Core options'
-permalink: /editorconfig/coreoptions
+permalink: /editorconfig/core-options
 ---
 
 ## Core EditorConfig Options
