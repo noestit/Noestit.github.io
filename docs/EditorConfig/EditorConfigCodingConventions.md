@@ -1,8 +1,10 @@
+---
 tags: docs_editorconfig
 index: 2
 layout: page
 title: 'EditorConfig Coding conventions'
 permalink: /editorconfig/codingconventions
+---
 
 ## .NET Coding Conventions
 [*.{cs,vb}] for all C# and VB files.
