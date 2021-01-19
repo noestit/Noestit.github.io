@@ -1,7 +1,6 @@
 ---
 tags: docs_editorconfig
 index: 1
-layout: page
 title: 'EditorConfig Core options'
 permalink: /editorconfig/coreoptions
 ---
