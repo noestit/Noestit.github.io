@@ -1,5 +1,15 @@
 remote_theme: "mmistakes/minimal-mistakes@4.16.5"
+minimal_mistakes_skin: "dark"
+
+title: Noest docs
+description: This is the document site of Noest.
+subtitle: Code conventions, best practices and configuration files.
+name: Noest
+url: "https://noest.it"
+repository: "https://github.com/noestit/Noestit.github.io/"
+
+include:
+   - editorconfig
 
 plugins:
-   - jekyll-include-cache
    - jekyll-include-cache

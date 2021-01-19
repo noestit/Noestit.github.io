@@ -1,6 +1,5 @@
 ---
-tags: docs_editorconfig
-index: 2
+layout: single
 title: 'EditorConfig Coding conventions'
 permalink: /editorconfig/coding-conventions
 ---
