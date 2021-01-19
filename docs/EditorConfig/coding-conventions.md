@@ -3,6 +3,7 @@ layout: single
 title: 'EditorConfig Coding conventions'
 permalink: /editorconfig/coding-conventions
 toc: true
+toc_sticky: true
 ---
 
 ## .NET Coding Conventions
