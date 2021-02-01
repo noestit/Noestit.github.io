@@ -2,6 +2,10 @@
 layout: single
 title: 'EditorConfig Coding conventions'
 permalink: /editorconfig/coding-conventions
+
+sidebar:
+  nav: "editorconfig"
+
 toc: true
 toc_sticky: true
 ---

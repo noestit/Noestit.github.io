@@ -2,11 +2,13 @@
    - title: "Home"
      url: /
    - title: "EditorConfig"
+     url: /editorconfig/coding-conventions
+
+     
+ editorconfig:
+   - title: "EditorConfig"
      children:
-      - title: "Coding Conventions"
-        url: /editorconfig/coding-conventions
       - title: "Base setup"
         url: /editorconfig/core-options
-   - title: "Contact"
-     url: /contact
-     
+      - title: "Coding Conventions"
+        url: /editorconfig/coding-conventions

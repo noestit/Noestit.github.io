@@ -2,6 +2,12 @@
 layout: single
 title: 'EditorConfig Core options'
 permalink: /editorconfig/core-options
+
+sidebar:
+  nav: "editorconfig"
+
+toc: true
+toc_sticky: true
 ---
 
 ## Core EditorConfig Options
