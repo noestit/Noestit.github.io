@@ -2,7 +2,9 @@
    - title: "Home"
      url: /
    - title: "EditorConfig"
-     url: /editorconfig/coding-conventions
+     url: /editorconfig/core-options
+   - title: "Code Conventions"
+     url: /codeconventions/index
 
      
  editorconfig:
@@ -12,3 +14,9 @@
         url: /editorconfig/core-options
       - title: "Coding Conventions"
         url: /editorconfig/coding-conventions
+
+ codeconvetions:
+   - title: "Code Conventions"
+     children:
+      - title: "Main"
+        url: /codeconventions/index
