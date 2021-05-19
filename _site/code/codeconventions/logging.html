@@ -1,0 +1,479 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Logging - Noest docs</title>
+<meta name="description" content="This is the document site of Noest.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Noest docs">
+<meta property="og:title" content="Logging">
+<meta property="og:url" content="http://localhost:4000/code/codeconventions/logging">
+
+
+  <meta property="og:description" content="This is the document site of Noest.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/code/codeconventions/logging">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Noest",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Noest docs Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/Block_Logo_Green.png" alt="Noest docs"></a>
+        
+        <a class="site-title" href="/">
+          Noest docs
+          <span class="site-subtitle">Code conventions, best practices and configuration files.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tooling/index">Tooling</a>
+            </li><li class="masthead__menu-item">
+              <a href="/documentationtechniques/index">Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/code/index">Code</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Code Conventions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/code/codeconventions/conventions">Main</a></li>
+          
+            <li><a href="/code/codeconventions/best-practices">Best practices</a></li>
+          
+            <li><a href="/code/codeconventions/entity-framework-linq">EF & Linq</a></li>
+          
+            <li><a href="/code/codeconventions/logging" class="active">Logging</a></li>
+          
+            <li><a href="/code/codeconventions/pattern-matching">Pattern matching</a></li>
+          
+            <li><a href="/code/codeconventions/tdd-unit-testing">TDD unit testing</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Code Guidelines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/code/codeguidelines/coding-style">Coding Style</a></li>
+          
+            <li><a href="/code/codeguidelines/folder-structure">Folder structure</a></li>
+          
+            <li><a href="/code/codeguidelines/globalization">Globalization</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Logging">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Logging
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="logging">Logging</h2>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Logging is a critical part in any application. When the end-user is faced with an error or unexpected behavior in the application, you want to have a trace or at least some pointer as to what went wrong. Logging exceptions with a stacktrace is very useful in that regard, while for some complex operations, you might decide to log additional side information to better understand the program flow. To distinguish trace data from error data, any decent logging framework also logs a level with each message and allows you to decide which level of messages you actually want to store.</p>
+
+<p>Build-in logging:</p>
+
+<ul>
+  <li>Microsoft.Extensions.Logging <a href="https://docs.microsoft.com/en-us/dotnet/core/extensions/logging?tabs=command-line">Microsoft docs</a></li>
+</ul>
+
+<p>A lot of third-party logging frameworks exist but two of them are quite popular in the .NET world:</p>
+
+<ul>
+  <li>log4net <a href="https://www.nuget.org/packages/log4net/">NuGet</a></li>
+  <li>Serilog <a href="https://www.nuget.org/packages/serilog/">NuGet</a></li>
+</ul>
+
+<p>Compared to log4net, Serilog has additional support for <a href="https://github.com/serilog/serilog/wiki/Structured-Data">structured logging</a> so could be the better choice for more complex applications.</p>
+
+<p>Both of these frameworks have a lot of different output methods: they can write to a file, write to a console, write to Windows Event log, write as XML, write as plain-text, write to a database, write to telnet, and so on. Log4Net calls them <code class="language-plaintext highlighter-rouge">Appenders</code> while Serilog calls them <code class="language-plaintext highlighter-rouge">Sinks</code>. See <a href="https://logging.apache.org/log4net/release/features.html">log4net features</a> or <a href="https://github.com/serilog/serilog/wiki/Provided-Sinks">Serilog sinks</a>.</p>
+
+<h3 id="logging-and-unit-testing">Logging and unit-testing</h3>
+
+<p>In the frameworks, you can choose to create different loggers for different context (f.e. different classes) or create one logger for the entire application. In any case, when running unit-tests, you don’t want to log anything to disk or any other output, so it’s advisable to inject a logging interface instead of directly calling a static <code class="language-plaintext highlighter-rouge">Log</code> class from the code.</p>
+
+<p>When a context logger per class is used, you can use this method:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// With log4net:</span>
+<span class="k">class</span> <span class="nc">UserService</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ILog</span> <span class="n">_logger</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">UserService</span><span class="p">(</span><span class="cm">/* other required dependencies */</span><span class="p">,</span> <span class="n">ILog</span> <span class="n">logger</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_logger</span> <span class="p">=</span> <span class="n">logger</span> <span class="p">??</span> <span class="n">LogManager</span><span class="p">.</span><span class="nf">GetLogger</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">UserService</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">SomeMethod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_logger</span><span class="p">.</span><span class="nf">Warn</span><span class="p">(</span><span class="s">"Some warning"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// With Serilog:</span>
+<span class="k">class</span> <span class="nc">UserService</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ILogger</span> <span class="n">_logger</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">UserService</span><span class="p">(</span><span class="cm">/* other required dependencies */</span><span class="p">,</span> <span class="n">ILogger</span> <span class="n">logger</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_logger</span> <span class="p">=</span> <span class="n">logger</span> <span class="p">??</span> <span class="n">Log</span><span class="p">.</span><span class="n">ForContext</span><span class="p">&lt;</span><span class="n">UserService</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">SomeMethod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_logger</span><span class="p">.</span><span class="nf">Warning</span><span class="p">(</span><span class="s">"Some warning"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// With Microsoft.Extensions.Logging</span>
+<span class="k">class</span> <span class="nc">UserService</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ILogger</span><span class="p">&lt;</span><span class="n">UserService</span><span class="p">&gt;</span> <span class="n">_logger</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">UserService</span><span class="p">(</span><span class="cm">/* other required dependencies */</span><span class="p">,</span> <span class="n">ILogger</span><span class="p">&lt;</span><span class="n">UserService</span><span class="p">&gt;</span> <span class="n">logger</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_logger</span> <span class="p">=</span> <span class="n">_logger</span> <span class="p">??</span> <span class="k">new</span> <span class="nf">LoggerFactory</span><span class="p">().</span><span class="n">CreateLogger</span><span class="p">&lt;</span><span class="n">UserService</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">SomeMethod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_logger</span><span class="p">.</span><span class="nf">LogWarning</span><span class="p">(</span><span class="s">"Some warning"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This way, at runtime, dependency injection will not inject a logger and a context specific logger will be created in the constructor. While in unit-tests you can pass a mock logger and even verify certain logging behavior.</p>
+
+<h3 id="serilog">Serilog</h3>
+
+<p>Serilog is easy to set up, has a clean <code class="language-plaintext highlighter-rouge">API</code> and can be used in all recent .NET platforms.</p>
+
+<p><strong>Configure Serilog &amp; Sinks</strong></p>
+
+<p>Create the logger using a <code class="language-plaintext highlighter-rouge">LoggerConfiguration</code> object.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Log</span><span class="p">.</span><span class="n">Logger</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LoggerConfiguration</span><span class="p">().</span><span class="nf">CreateLogger</span><span class="p">();</span>
+<span class="n">Log</span><span class="p">.</span><span class="nf">Information</span><span class="p">(</span><span class="s">"Who will read this?"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The above code example creates a logger that doesn’t log any event anywhere. To log events, a sink must be configured.
+Sinks are configures using the <code class="language-plaintext highlighter-rouge">WriteTo</code> configuration object.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Log</span><span class="p">.</span><span class="n">Logger</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LoggerConfiguration</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">WriteTo</span><span class="p">.</span><span class="nf">Console</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">CreateLogger</span><span class="p">();</span>
+
+<span class="c1">//Log event</span>
+<span class="n">Log</span><span class="p">.</span><span class="nf">Information</span><span class="p">(</span><span class="s">"Now you can read this in the console!"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The example above will write information logs to the console.
+You can configure multiple sinks, by chaining the <code class="language-plaintext highlighter-rouge">WriteTo</code> blocks. In the example below, a minimum log event level is passed to the configuration.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Log</span><span class="p">.</span><span class="n">Logger</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LoggerConfiguration</span><span class="p">()</span>
+        <span class="p">.</span><span class="n">MinimumLevel</span><span class="p">.</span><span class="nf">Debug</span><span class="p">()</span> <span class="c1">//Override for logger</span>
+        <span class="p">.</span><span class="n">Enrich</span><span class="p">.</span><span class="nf">FromLogContext</span><span class="p">()</span>
+        <span class="p">.</span><span class="n">WriteTo</span><span class="p">.</span><span class="nf">File</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">logFilePath</span><span class="p">,</span> <span class="n">rollingInterval</span><span class="p">:</span> <span class="n">RollingInterval</span><span class="p">.</span><span class="n">Day</span><span class="p">,</span> <span class="n">outputTemplate</span><span class="p">:</span> <span class="s">"[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}"</span><span class="p">)</span>
+        <span class="p">.</span><span class="n">WriteTo</span><span class="p">.</span><span class="nf">Console</span><span class="p">(</span><span class="n">restrictedToMinimumLevel</span><span class="p">:</span> <span class="n">LogEventLevel</span><span class="p">.</span><span class="n">Information</span><span class="p">)</span> <span class="c1">//Override per sink</span>
+        <span class="p">.</span><span class="nf">CreateLogger</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><strong>Creating a custom sink</strong></p>
+
+<p>A sink is nothing more than a <code class="language-plaintext highlighter-rouge">class</code> that implements <code class="language-plaintext highlighter-rouge">ILogEventSink</code>. The example below creates a <code class="language-plaintext highlighter-rouge">sink</code> that renders every message to the console, regardless of the log level.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">MyCustomSink</span><span class="p">:</span> <span class="n">ILogEventSink</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">IFormatProvider</span> <span class="n">_formatProvider</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nf">MyCustomSink</span><span class="p">(</span><span class="n">IFormatProvider</span> <span class="n">formatProvider</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">_formatProvider</span> <span class="p">=</span> <span class="n">formatProvider</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Emit</span><span class="p">(</span><span class="n">LogEvent</span> <span class="n">logEvent</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">message</span> <span class="p">=</span> <span class="n">logEvent</span><span class="p">.</span><span class="nf">RenderMessage</span><span class="p">(</span><span class="n">_formatProvider</span><span class="p">);</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">DateTimeOffSet</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()}</span><span class="s"> </span><span class="p">{</span><span class="n">message</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Extensions for configuration</strong></p>
+
+<p>When configuring a sink, a extension method can be provided.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">MyCustomSinkExtensions</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="n">LoggerConfiguration</span> <span class="nf">MyCustomSink</span><span class="p">(</span>
+        <span class="k">this</span> <span class="n">LoggerSinkConfiguration</span> <span class="n">loggerConfiguration</span><span class="p">,</span>
+        <span class="n">IFormatProvider</span> <span class="n">formatProvider</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">loggerConfiguration</span><span class="p">.</span><span class="nf">Sink</span><span class="p">(</span><span class="k">new</span> <span class="nf">MyCustomSink</span><span class="p">(</span><span class="n">formatProvider</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can now use sink in your <code class="language-plaintext highlighter-rouge">LoggerConfiguration</code>:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">log</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LoggerConfiguration</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">MinimumLevel</span><span class="p">.</span><span class="nf">Information</span><span class="p">()</span>
+    <span class="p">.</span><span class="n">WriteTo</span><span class="p">.</span><span class="nf">MyCustomSink</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">CreateLogger</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h2 id="additional-resources">Additional resources</h2>
+
+<ul>
+  <li><a href="https://stackify.com/log4net-guide-dotnet-logging/">Ultimate log4net Tutorial for .NET Logging</a></li>
+  <li><a href="https://blog.getseq.net/serilog-tutorial/">Serilog tutorial</a></li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Noest. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,659 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Noest coding guidelines - Noest docs</title>
+<meta name="description" content="This is the document site of Noest.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Noest docs">
+<meta property="og:title" content="Noest coding guidelines">
+<meta property="og:url" content="http://localhost:4000/code/codeguidelines/coding-style">
+
+
+  <meta property="og:description" content="This is the document site of Noest.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/code/codeguidelines/coding-style">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Noest",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Noest docs Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/Block_Logo_Green.png" alt="Noest docs"></a>
+        
+        <a class="site-title" href="/">
+          Noest docs
+          <span class="site-subtitle">Code conventions, best practices and configuration files.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tooling/index">Tooling</a>
+            </li><li class="masthead__menu-item">
+              <a href="/documentationtechniques/index">Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/code/index">Code</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Code Conventions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/code/codeconventions/conventions">Main</a></li>
+          
+            <li><a href="/code/codeconventions/best-practices">Best practices</a></li>
+          
+            <li><a href="/code/codeconventions/entity-framework-linq">EF & Linq</a></li>
+          
+            <li><a href="/code/codeconventions/logging">Logging</a></li>
+          
+            <li><a href="/code/codeconventions/pattern-matching">Pattern matching</a></li>
+          
+            <li><a href="/code/codeconventions/tdd-unit-testing">TDD unit testing</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Code Guidelines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/code/codeguidelines/coding-style" class="active">Coding Style</a></li>
+          
+            <li><a href="/code/codeguidelines/folder-structure">Folder structure</a></li>
+          
+            <li><a href="/code/codeguidelines/globalization">Globalization</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Noest coding guidelines">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Noest coding guidelines
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="coding-style">Coding Style</h2>
+
+<h3 id="tabs-vs-spaces">Tabs vs Spaces</h3>
+
+<p>We use the default indentation of 4 spaces, no tabs.</p>
+
+<h3 id="declare-all-member-variables-at-the-top-of-a-class-with-staticconst-members-at-the-very-top">Declare all member variables at the top of a class, with static/const members at the very top</h3>
+
+<p>In general, we follow this order:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">private const</code></li>
+  <li><code class="language-plaintext highlighter-rouge">private static readonly</code></li>
+  <li><code class="language-plaintext highlighter-rouge">private readonly</code></li>
+  <li><code class="language-plaintext highlighter-rouge">private</code></li>
+  <li><code class="language-plaintext highlighter-rouge">public properties</code></li>
+</ul>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Developer</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">Prefix</span> <span class="p">=</span> <span class="s">"NST"</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">Seed</span> <span class="p">=</span> <span class="n">Cryptography</span><span class="p">.</span><span class="nf">GenerateSeed</span><span class="p">(</span><span class="m">32</span><span class="p">);</span>
+
+    <span class="k">private</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">_language</span><span class="p">;</span>
+    <span class="k">private</span> <span class="kt">int</span> <span class="n">_age</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Number</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">decimal</span> <span class="n">Wage</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">// Constructor</span>
+    <span class="k">public</span> <span class="nf">Developer</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="curly-brackets-below-methodfunctionclass-definition">Curly brackets below method/function/class definition</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">SomeMethod</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">public</span> <span class="kt">int</span> <span class="nf">CalculateHours</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Exception: property declarations</span>
+<span class="k">public</span> <span class="kt">int</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c1">// Exception: if-statements with small one-line body</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">bookingService</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentNullException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">bookingService</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h3 id="order-of-namespaces">Order of namespaces</h3>
+
+<p>Order alphabetically but keep <code class="language-plaintext highlighter-rouge">System</code> directives on top.</p>
+
+<h3 id="summarize-methods">Summarize methods</h3>
+
+<p>Only summarize public methods that are exposed by the project.</p>
+
+<p>This also includes ASP.NET Controller methods.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Description of what the method does.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="c1">/// &lt;param name="userId"&gt;An optional user id.&lt;/param&gt;</span>
+<span class="c1">/// &lt;returns&gt;Does the method return a view? A result value?&lt;/returns&gt;</span>
+<span class="k">public</span> <span class="n">IActionResult</span> <span class="nf">Index</span><span class="p">(</span><span class="kt">int</span> <span class="n">userId</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Make sure to keep summaries up-to-date!</p>
+
+<h3 id="commenting">Commenting</h3>
+
+<p>Writing and maintaining comments is expensive and it’s the first thing that gets outdated during refactoring or bugfixes.</p>
+
+<blockquote>
+  <p>If your feel your code is too complex to understand without comments, your code is probably just bad – Sammy Larbi</p>
+</blockquote>
+
+<p>Also read <a href="https://blog.codinghorror.com/coding-without-comments/">coding without comments</a>.</p>
+
+<h3 id="spacing-between-functions-methods-and-field-declarations">Spacing between functions, methods and field declarations</h3>
+
+<p>Try to keep your code files structured. In short: have the amount of whitespace that is easy on the eye. <strong>Think paragraph-like</strong>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">Method</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">variable</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Variable</span><span class="p">();</span>
+    <span class="n">variable</span><span class="p">.</span><span class="n">Property</span> <span class="p">+=</span> <span class="n">number</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">statement</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">variable</span><span class="p">.</span><span class="n">Boolean</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">variable</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">variable</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">void</span> <span class="nf">AnotherMethod</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Do Stuff</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Bad</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">Method</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">variable</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Variable</span><span class="p">();</span>
+    <span class="n">variable</span><span class="p">.</span><span class="n">Property</span> <span class="p">+=</span> <span class="n">number</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">statement</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">variable</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">variable</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">AnotherMethod</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Do Stuff</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="usage-of-regions">Usage of regions</h3>
+
+<p>Regions are a way to structure large blocks of code. However, since we believe in small methods and classes, we will <strong>not</strong> allow the usage of regions.</p>
+
+<h3 id="working-with-lots-of-arguments">Working with lots of arguments</h3>
+
+<p>When a constructor or method takes more than 3 arguments, sort them under each other instead of creating a long unwrapped list.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">public</span> <span class="nf">AccountController</span><span class="p">(</span>
+    <span class="n">IUnitOfWork</span> <span class="n">unitOfWork</span><span class="p">,</span>
+    <span class="n">IObjectService</span> <span class="n">objectService</span><span class="p">,</span>
+    <span class="n">ILogger</span> <span class="n">logger</span><span class="p">,</span>
+    <span class="n">IHelper</span> <span class="n">helper</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">_unitOfWork</span> <span class="p">=</span> <span class="n">unitOfWork</span><span class="p">;</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">public</span> <span class="nf">AccountController</span><span class="p">(</span><span class="n">IUnitOfWork</span> <span class="n">unitOfWork</span><span class="p">,</span> <span class="n">IObjectService</span> <span class="n">objectService</span><span class="p">,</span> <span class="n">ILogger</span> <span class="n">logger</span><span class="p">,</span> <span class="n">IHelper</span> <span class="n">helper</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">_unitOfWork</span> <span class="p">=</span> <span class="n">unitOfWork</span><span class="p">;</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Also, when calling constructors or methods with more than 1 argument, use the argument names in the call. This makes the code safe against refactoring.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="n">accountController</span><span class="p">.</span><span class="nf">AddAccount</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="n">command</span><span class="p">.</span><span class="n">Username</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="n">command</span><span class="p">.</span><span class="n">Email</span><span class="p">);</span>
+
+<span class="c1">// Bad</span>
+<span class="n">accountController</span><span class="p">.</span><span class="nf">AddAccount</span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="n">Username</span><span class="p">,</span> <span class="n">command</span><span class="p">.</span><span class="n">Email</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="value-tuples">Value tuples</h3>
+
+<p>A tuple is a data structure that contains a sequence of elements of different data types. It can be used where you want to have a data structure to hold an object with properties, but you don’t want to create a separate type for it. <a href="https://www.c-sharpcorner.com/blogs/tuples-in-c-sharp">source</a></p>
+
+<p>Use the named members notation.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// BAD</span>
+ <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="n">person1</span> <span class="p">=</span> <span class="p">(</span><span class="s">"John Doe"</span><span class="p">,</span> <span class="m">31</span><span class="p">);</span>
+ <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Tuple with elements </span><span class="p">{</span><span class="n">person1</span><span class="p">.</span><span class="n">Item1</span><span class="p">}</span><span class="s"> and </span><span class="p">{</span><span class="n">person1</span><span class="p">.</span><span class="n">Item2</span><span class="p">}</span><span class="s">."</span><span class="p">);</span>
+
+<span class="c1">// Good</span>
+<span class="p">(</span><span class="kt">string</span> <span class="n">Name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">Age</span><span class="p">)</span> <span class="n">person2</span> <span class="p">=</span> <span class="p">(</span><span class="s">"John Doe"</span><span class="p">,</span> <span class="m">31</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Sum of </span><span class="p">{</span><span class="n">person2</span><span class="p">.</span><span class="n">Name</span><span class="p">}</span><span class="s"> elements is </span><span class="p">{</span><span class="n">person2</span><span class="p">.</span><span class="n">Age</span><span class="p">}</span><span class="s">."</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Use cases:</p>
+
+<ul>
+  <li>Instead of out parameters</li>
+  <li>When you need to return two classes this could come in handy, you don’t want to generate a composed class or a class that’s only used for one method.</li>
+  <li>If you only wish to return two values for a method and the class would only be used for that method, having a class might seem like too much.</li>
+</ul>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Using out:</span>
+<span class="nf">GetPerson</span><span class="p">(</span><span class="k">out</span> <span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="k">out</span> <span class="kt">int</span> <span class="n">age</span><span class="p">);</span>
+
+<span class="kt">object</span> <span class="n">person</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span>
+    <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">,</span>
+    <span class="n">Age</span> <span class="p">=</span> <span class="n">age</span>
+<span class="p">};</span>
+
+<span class="c1">// Using Tuple class:</span>
+<span class="p">(</span><span class="kt">string</span> <span class="n">Name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">Age</span><span class="p">)</span> <span class="n">person</span> <span class="p">=</span> <span class="nf">GetPerson</span><span class="p">();</span>
+</code></pre></div></div>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">Customer</span> <span class="n">Customer</span><span class="p">,</span> <span class="n">Basket</span> <span class="n">Basket</span><span class="p">)</span> <span class="n">customerWithBasket</span> <span class="p">=</span> <span class="nf">GetCustomerWithBasket</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Note:</strong> Be cautious when using <code class="language-plaintext highlighter-rouge">ValueTuples</code></p>
+
+<p>The use of C# 7 <code class="language-plaintext highlighter-rouge">ValueTuple</code> is only allowed in private methods. Any public method should not take or return a <code class="language-plaintext highlighter-rouge">ValueTuple</code>.</p>
+
+<p>If a public method needs to take or return a combination of multiple fields, create a result or context class with the required fields.
+The problem with tuples is that you can easily swap values without the compiler (or you) noticing. Consider the examples below:</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Bad: tuple elements get mistakenly swapped in calling code</span>
+<span class="k">public</span> <span class="p">(</span><span class="kt">string</span> <span class="n">FirstName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">LastName</span><span class="p">)</span> <span class="nf">GetPersonNameInfo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">FirstName</span><span class="p">:</span> <span class="s">"Bob"</span><span class="p">,</span> <span class="n">LastName</span><span class="p">:</span> <span class="s">"Dylan"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">(</span><span class="kt">string</span> <span class="n">LastName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">FirstName</span><span class="p">)</span> <span class="n">result</span> <span class="p">=</span> <span class="nf">GetPersonNameInfo</span><span class="p">();</span>
+
+<span class="c1">// Bad: tuple elements get mistakenly swapped in method itself</span>
+<span class="k">public</span> <span class="p">(</span><span class="kt">string</span> <span class="n">Firstname</span><span class="p">,</span> <span class="kt">string</span> <span class="n">LastName</span><span class="p">)</span> <span class="nf">GetPersonNameInfo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="s">"Dylan"</span><span class="p">,</span> <span class="s">"Bob"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Good</span>
+<span class="k">public</span> <span class="n">PersonNameInfo</span> <span class="nf">GetPersonNameInfo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">PersonNameInfo</span>
+    <span class="p">{</span>
+        <span class="n">FirstName</span> <span class="p">=</span> <span class="s">"Bob"</span><span class="p">,</span>
+        <span class="n">Lastname</span> <span class="p">=</span> <span class="s">"Dylan"</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="usage-of-the--operator">Usage of the ? operator</h3>
+
+<p>You can express calculations that otherwise need an <code class="language-plaintext highlighter-rouge">if-else</code> construction more concisely by using the conditional operator.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">IsValid</span><span class="p">;</span>
+
+<span class="c1">// If-Else construction</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">isValid</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">expression</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="n">second_expression</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Ternary conditional expression (?:)</span>
+<span class="n">IsValid</span> <span class="p">?</span> <span class="n">expression</span> <span class="p">:</span> <span class="n">second_expression</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>You can simplify nested null checks with the conditional operator.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">something</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">something</span><span class="p">.</span><span class="n">Other</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">something</span><span class="p">.</span><span class="n">Other</span><span class="p">.</span><span class="n">Child</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Conditional (?.) operator</span>
+<span class="k">return</span> <span class="n">something</span><span class="p">?.</span><span class="n">Other</span><span class="p">?.</span><span class="n">Child</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The null-coalescing operator returns the left-side of the check is it isn’t null. Else it returns the right side.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">something</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">empty</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Null-coalescing (??) operator</span>
+<span class="k">return</span> <span class="n">something</span> <span class="p">??</span> <span class="kt">string</span><span class="p">.</span><span class="n">empty</span><span class="p">;</span>
+
+
+
+<span class="kt">int</span><span class="p">?</span> <span class="n">number</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+<span class="kt">var</span> <span class="n">n</span> <span class="p">=</span> <span class="n">number</span><span class="p">.</span><span class="n">HasValue</span> <span class="p">?</span> <span class="n">number</span> <span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+
+<span class="c1">// Null coalescing (??) operator</span>
+<span class="kt">var</span> <span class="n">n</span> <span class="p">=</span> <span class="n">number</span> <span class="p">??</span> <span class="m">0</span><span class="p">;</span>
+
+<span class="c1">// Alternative for numbers : GetValueOrDefault() if you want to return the default value of the underlaying value type.</span>
+<span class="kt">var</span> <span class="n">n</span> <span class="p">=</span> <span class="n">number</span><span class="p">.</span><span class="nf">GetValueOrDefault</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>We don’t force one way or the other, just use what is the most readable / understandable for the given situation.</p>
+
+<h3 id="input-parameters-in-lambda-expressions">Input parameters in lambda expressions</h3>
+
+<p>For simple and short lambda expressions, we allow the use of <code class="language-plaintext highlighter-rouge">x</code> as input parameter name. For more complex expressions, use full names.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kt">var</span> <span class="n">enabledUsers</span> <span class="p">=</span> <span class="n">users</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">IsEnabled</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">enabledUsers</span> <span class="p">=</span> <span class="n">users</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">user</span> <span class="p">=&gt;</span> <span class="n">user</span><span class="p">.</span><span class="n">IsEnabled</span><span class="p">);</span>
+
+<span class="c1">// Bad</span>
+<span class="kt">var</span> <span class="n">enabledUsers</span> <span class="p">=</span> <span class="n">users</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">w</span> <span class="p">=&gt;</span> <span class="n">w</span><span class="p">.</span><span class="n">IsEnabled</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="concatenating-strings">Concatenating strings</h3>
+
+<p>Avoid using ‘+’ to concatenate text into a new string.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">"John"</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">greetings</span> <span class="p">=</span> <span class="s">"Hello "</span> <span class="p">+</span> <span class="n">name</span> <span class="p">+</span> <span class="s">"!"</span><span class="p">;</span>
+
+<span class="c1">//Good: string.Format()</span>
+<span class="kt">string</span> <span class="n">greetingFormat</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"Hello {0}!"</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+
+<span class="c1">//Better: string interpolation (${})</span>
+<span class="kt">string</span> <span class="n">greeting</span> <span class="p">=</span> <span class="s">$"Hello, </span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="s">!"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>When you need to execute multiple changes to a string, creating a new String object will cause overhead. If you find yourself in this situation it is best to use <code class="language-plaintext highlighter-rouge">System.Text.StringBuilder</code> class.</p>
+
+<p>If you want to use the <a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/stringbuilder">StringBuilder</a> object you must pass it to a string object. This can easily be done via <code class="language-plaintext highlighter-rouge">.ToString()</code>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+
+<span class="n">StringBuilder</span> <span class="n">stringBuilder</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="p">(</span><span class="s">"Hello! "</span><span class="p">);</span>
+<span class="n">stringBuilder</span><span class="p">.</span><span class="nf">Append</span><span class="p">(</span><span class="s">"What a beautiful day. "</span><span class="p">);</span>
+<span class="n">stringBuilder</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">"Let's count numbers"</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">4</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+<span class="p">{</span>
+    <span class="n">stringBuilder</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">i</span><span class="p">}</span><span class="s">."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">stringBuilder</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+
+<span class="c1">// Hello! What a beautiful day. Let's count numbers</span>
+<span class="c1">// 0.</span>
+<span class="c1">// 1.</span>
+<span class="c1">// 2.</span>
+<span class="c1">// 3.</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Noest. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

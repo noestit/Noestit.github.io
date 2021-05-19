@@ -1,0 +1,413 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TDD unit testing - Noest docs</title>
+<meta name="description" content="This is the document site of Noest.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Noest docs">
+<meta property="og:title" content="TDD unit testing">
+<meta property="og:url" content="http://localhost:4000/code/codeconventions/tdd-unit-testing">
+
+
+  <meta property="og:description" content="This is the document site of Noest.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/code/codeconventions/tdd-unit-testing">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Noest",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Noest docs Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/Block_Logo_Green.png" alt="Noest docs"></a>
+        
+        <a class="site-title" href="/">
+          Noest docs
+          <span class="site-subtitle">Code conventions, best practices and configuration files.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tooling/index">Tooling</a>
+            </li><li class="masthead__menu-item">
+              <a href="/documentationtechniques/index">Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/code/index">Code</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Code Conventions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/code/codeconventions/conventions">Main</a></li>
+          
+            <li><a href="/code/codeconventions/best-practices">Best practices</a></li>
+          
+            <li><a href="/code/codeconventions/entity-framework-linq">EF & Linq</a></li>
+          
+            <li><a href="/code/codeconventions/logging">Logging</a></li>
+          
+            <li><a href="/code/codeconventions/pattern-matching">Pattern matching</a></li>
+          
+            <li><a href="/code/codeconventions/tdd-unit-testing" class="active">TDD unit testing</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Code Guidelines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/code/codeguidelines/coding-style">Coding Style</a></li>
+          
+            <li><a href="/code/codeguidelines/folder-structure">Folder structure</a></li>
+          
+            <li><a href="/code/codeguidelines/globalization">Globalization</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TDD unit testing">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">TDD unit testing
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="test-driven-design-tdd-and-unit-testing">Test Driven Design (TDD) and Unit Testing</h2>
+
+<p>In order maximize testability of our code, we follow these rules and best practices.</p>
+
+<h2 id="best-practices">Best practices</h2>
+
+<h3 id="write-the-test-first">Write the test first</h3>
+
+<p>Write the tests first, then the code. This ensures that you write testable code and that every line of code gets tested.</p>
+
+<h3 id="seperate-ui-code-from-its-behavior-using-mvc-or-mpv">Seperate UI code from its behavior using MVC or MPV</h3>
+
+<p>This allows the business logic to be tested while parts that can’t be unit-tested (UI) is minimized.</p>
+
+<h3 id="design-classes-using-dependency-injection">Design classes using dependency injection</h3>
+
+<p>When an object creates its own dependencies, you have no control over them. Dependency injection (IoC/DI) allows you to isolate the object under test with mocks/stubs.</p>
+
+<h3 id="program-against-interfaces-not-classes">Program against interfaces, not classes</h3>
+
+<p>Using interfaces clarifies the relationship between objects and provides a great deal of flexibility to the developer and support for various mock object frameworks. Not using interfaces to inject dependencies to the constructor makes it hard to sometimes impossible to isolate certain implementations for unit-testing.</p>
+
+<h3 id="implement-continuous-integration">Implement continuous integration</h3>
+
+<p>Build your software and run your full suite of tests on every check in, pull-request, merge, etc.</p>
+
+<h2 id="naming-convention">Naming convention</h2>
+
+<p>A consistent naming convention helps to avoid comments and increases maintainability and identifiability. When a test fails you know exactly what functionality has been broken.</p>
+
+<p>We try to follow this convention:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Method Under Test&gt;_&lt;Given&gt;_&lt;Expected&gt;
+</code></pre></div></div>
+
+<h2 id="characteristics-of-a-good-unit-test">Characteristics of a good unit test</h2>
+
+<ul>
+  <li>Fast: It’s common for big projects to have thousands of unit tests. They should take little time to run. Milliseconds.</li>
+  <li>Isolated: Unit tests are stand alone, can be run in isolation, and have no dependencies on any outside factors.</li>
+  <li>Repeatable: Running a unit test should be consistent with its results. Always return same result if nothing has changed between runs.</li>
+  <li>Self-Checking: The test should detect if it has passed or failed without any human interaction.</li>
+  <li>Timely: A unit test should not take a disproportionally long time to write compared to the code being tested.</li>
+</ul>
+
+<h2 id="frameworks-and-tools">Frameworks and tools</h2>
+
+<h3 id="frameworks">Frameworks</h3>
+
+<p>There are several unit-testing frameworks available for .NET, including:</p>
+
+<ul>
+  <li>MSTest/Visual Studio (basic)</li>
+  <li>NUnit</li>
+  <li>xUnit.NET</li>
+  <li>MbUnit</li>
+</ul>
+
+<p><a href="https://stackoverflow.com/questions/276829/what-can-i-use-for-good-quality-code-coverage-for-c-net" title="Stack overflow">See this post</a> for more information on different frameworks.</p>
+
+<p>We prefer to use the combination of <code class="language-plaintext highlighter-rouge">xUnit</code>, <code class="language-plaintext highlighter-rouge">Moq</code> and <code class="language-plaintext highlighter-rouge">FluentAssertions</code> in our projects.</p>
+
+<p>More info about the <code class="language-plaintext highlighter-rouge">FluentAssertions</code> framework <a href="https://fluentassertions.com/">here</a>.</p>
+
+<h3 id="mocking-with-moq">Mocking with Moq</h3>
+
+<p>Mock objects allow you to mimic the behaviour of classes and interfaces, so you can let your tests interact with the code as if it was real. This isolates the code you are testing and makes sure no other code will make the tests fail.</p>
+
+<p><strong>The Setup method</strong></p>
+
+<p>The Setup method is used to set expectations on the mock object.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">userRepositoryMock</span><span class="p">.</span><span class="nf">SetUp</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="nf">IsDeveloper</span><span class="p">(</span><span class="s">"Tim"</span><span class="p">)).</span><span class="nf">Returns</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>With this code, we are setting the <code class="language-plaintext highlighter-rouge">IsDeveloper</code> method on the mocked repository object.
+We define that, when the parameter is “Tim”, the method should return <code class="language-plaintext highlighter-rouge">true</code>. In this case we tell the mock exactly what we want returned.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">userRepositoryMock</span><span class="p">.</span><span class="nf">SetUp</span><span class="p">(</span><span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="nf">IsDeveloper</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="n">Guid</span><span class="p">&gt;())).</span><span class="nf">Returns</span><span class="p">(</span><span class="n">It</span><span class="p">.</span><span class="n">IsAny</span><span class="p">&lt;</span><span class="kt">bool</span><span class="p">&gt;());</span>
+</code></pre></div></div>
+
+<p>With the code example above, we don’t tell exactly what we want returned. We state that when a <code class="language-plaintext highlighter-rouge">Guid</code> is passed as a parameter, a <code class="language-plaintext highlighter-rouge">bool</code> must be returned.</p>
+
+<h3 id="tools-and-extensions">Tools and extensions</h3>
+
+<p>Tools used to check unit testing / code coverage. Most of these tools require a purchase, and/or have a free trial period.</p>
+
+<ul>
+  <li>Ncrunch</li>
+  <li>NCover</li>
+  <li>dotCover</li>
+</ul>
+
+<p><a href="https://stackoverflow.com/questions/261139/nunit-vs-mbunit-vs-mstest-vs-xunit-net" title="Stack overflow">See this post</a> for more information on different tools.</p>
+
+<p>Preferred scenario is to use NUnit as unit-testing framework with ReSharper for integration in VS, though ReSharper is very expensive.</p>
+
+<p>When building with a CI tool like Jenkins and you don’t need code coverage inside Visual Studio, you can use the free Jenkins <a href="https://wiki.jenkins.io/display/JENKINS/Cobertura+Plugin">Cobertura plugin</a> to visualize coverage reports, use the free <a href="https://www.nuget.org/packages/OpenCover/"><code class="language-plaintext highlighter-rouge">OpenCover</code></a> package to generate a coverage report while running <code class="language-plaintext highlighter-rouge">NUnit</code> after which it should run the free tool <a href="https://www.nuget.org/packages/OpenCoverToCoberturaConverter/"><code class="language-plaintext highlighter-rouge">OpenCoverToCoberturaConverter</code></a> to convert the OpenCover report to a report the Jenkins plugin understands. Also see <a href="https://www.swtestacademy.com/jenkins-dotnet-integration/">this blogpost</a>.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Noest. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

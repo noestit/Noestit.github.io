@@ -1,0 +1,351 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Architectural decision records - Noest docs</title>
+<meta name="description" content="This is the document site of Noest.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Noest docs">
+<meta property="og:title" content="Architectural decision records">
+<meta property="og:url" content="http://localhost:4000/documentationtechniques/adr/architectural-decision-record">
+
+
+  <meta property="og:description" content="This is the document site of Noest.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/documentationtechniques/adr/architectural-decision-record">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Noest",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Noest docs Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/Block_Logo_Green.png" alt="Noest docs"></a>
+        
+        <a class="site-title" href="/">
+          Noest docs
+          <span class="site-subtitle">Code conventions, best practices and configuration files.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tooling/index">Tooling</a>
+            </li><li class="masthead__menu-item">
+              <a href="/documentationtechniques/index">Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/code/index">Code</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Architectural decision records</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/documentationtechniques/adr/architectural-decision-record" class="active">Main</a></li>
+          
+            <li><a href="/documentationtechniques/adr/template">Template</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Architectural decision records">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Architectural decision records
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>An Architectural Decision (AD) is a software design choice that addresses a functional or non-functional requirement that is architecturally significant. To keep track of ‘<em>architecturally significant</em>’ decisions made within the project course, we document the Architectural Decisions in ADRs (Architectural Decision Records).</p>
+
+<h2 id="what-is-an-architecture-decision-record">What is an architecture decision record?</h2>
+
+<p>An <strong>architecture decision record</strong> (ADR) is a document that captures an important architectural decision made along with its context and consequences.</p>
+
+<p>An <strong>architecture decision</strong> (AD) is a software design choice that addresses a significant requirement.</p>
+
+<p>An <strong>architecture decision log</strong> (ADL) is the collection of all ADRs created and maintained for a particular project (or organization).</p>
+
+<p>An <strong>architecturally-significant requirement</strong> (ASR) is a requirement that has a measurable effect on a software system’s architecture.</p>
+
+<p>All these are within the topic of <strong>architecture knowledge management</strong> (AKM).</p>
+
+<p>The goal of this document is to provide a fast overview of ADRs, how to create them, and where to look for more information.</p>
+
+<p>Abbreviations:</p>
+
+<ul>
+  <li>
+    <p><strong>AD</strong>: architecture decision</p>
+  </li>
+  <li>
+    <p><strong>ADL</strong>: architecture decision log</p>
+  </li>
+  <li>
+    <p><strong>ADR</strong>: architecture decision record</p>
+  </li>
+  <li>
+    <p><strong>AKM</strong>: architecture knowledge management</p>
+  </li>
+  <li>
+    <p><strong>ASR</strong>: architecturally-significant requirement</p>
+  </li>
+</ul>
+
+<p><em><strong>Architecturally Significant decisions</strong> are those that affect the structure, non-functional characteristics, dependencies, 
+    interfaces or construction techniques</em>.</p>
+
+<h3 id="keys-of-what-your-adr-should-be">Keys of what your ADR should be</h3>
+<ul>
+  <li>ADRs should be small, modular documents with at least the change to be updated</li>
+  <li>ADRs should at all times reflect the trade off of the AD</li>
+  <li>With ADRs it should be possible to keep track of motivations behind certain decisions for the entire software cycle</li>
+  <li>With ADRs it should be possible for new people to easily see how and why the software was implemented/build as is</li>
+</ul>
+
+<h3 id="structure-of-a-adr">Structure of a ADR</h3>
+
+<ul>
+  <li>Title: The documents have names that are short noun phrases. Prefixed with ADR # (ex. ‘ADR 1: LDAP for Multitenant Integration’)</li>
+  <li>Status: A decision may be ‘<strong>proposed</strong>’ if the PO (product owner) haven’t agreed with it yet, or ‘<strong>accepted</strong>’ once it is agreed. If a later ADR changes or reverses a decision, it may be marked as ‘<strong>deprecated</strong>’ or ‘<strong>superseded</strong>’ with a reference to its replacement. Other statuses</li>
+  <li>Context: Describes the forces at play including technological, political, social and project local. These forces are probably in tension, and should be called out as such. The language in this section is value-neutral. It is simply describing facts.</li>
+  <li>Decision: Describes our response to these forces. It is stated in full sentences, with active voice. “<strong>We will …</strong>”</li>
+  <li>Consequences: This describes the resulting context, after applying the decision. All consequences should be listed here, Positive, Negative and Neutral consequences that affect the team and project in the future.</li>
+</ul>
+
+<h3 id="links">Links</h3>
+<ul>
+  <li><a href="https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions">Michael Nygard - documenting-architecture-decisions</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Architectural_decision">Architectural decision from Wikipedia</a></li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Noest. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

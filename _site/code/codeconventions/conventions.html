@@ -1,0 +1,512 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Noest code conventions - Noest docs</title>
+<meta name="description" content="This is the document site of Noest.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Noest docs">
+<meta property="og:title" content="Noest code conventions">
+<meta property="og:url" content="http://localhost:4000/code/codeconventions/conventions">
+
+
+  <meta property="og:description" content="This is the document site of Noest.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/code/codeconventions/conventions">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Noest",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Noest docs Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/Block_Logo_Green.png" alt="Noest docs"></a>
+        
+        <a class="site-title" href="/">
+          Noest docs
+          <span class="site-subtitle">Code conventions, best practices and configuration files.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tooling/index">Tooling</a>
+            </li><li class="masthead__menu-item">
+              <a href="/documentationtechniques/index">Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/code/index">Code</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Code Conventions</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/code/codeconventions/conventions" class="active">Main</a></li>
+          
+            <li><a href="/code/codeconventions/best-practices">Best practices</a></li>
+          
+            <li><a href="/code/codeconventions/entity-framework-linq">EF & Linq</a></li>
+          
+            <li><a href="/code/codeconventions/logging">Logging</a></li>
+          
+            <li><a href="/code/codeconventions/pattern-matching">Pattern matching</a></li>
+          
+            <li><a href="/code/codeconventions/tdd-unit-testing">TDD unit testing</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Code Guidelines</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/code/codeguidelines/coding-style">Coding Style</a></li>
+          
+            <li><a href="/code/codeguidelines/folder-structure">Folder structure</a></li>
+          
+            <li><a href="/code/codeguidelines/globalization">Globalization</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Noest code conventions">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Noest code conventions
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#editorconfig">EditorConfig</a><ul><li><a href="#using-an-editorconfig-file-in-visual-studio">Using an .editorconfig file in Visual Studio</a></li></ul></li><li><a href="#naming-conventions">Naming conventions</a><ul><li><a href="#use-pascalcasing-for-event--property-namespace--class--and-methodnames">Use PascalCasing for event-, property, namespace-, class- and methodnames</a></li><li><a href="#use-camelcasing-for-method-parameters-and-local-variables">Use camelCasing for method parameters and local variables</a></li><li><a href="#use-predefined-type-aliases-instead-of-system-type-names">Use predefined type aliases instead of system type names</a></li><li><a href="#interface-names-always-start-with-capital-letter-i">Interface names always start with capital letter I</a></li><li><a href="#avoid-using-abbreviations">Avoid using abbreviations.</a></li><li><a href="#do-not-use-include-parent-class-name-within-a-property-name">DO NOT use include parent class name within a property name.</a></li><li><a href="#do-not-use-hungarian-notation-for-any-other-type-identification-in-identifiers">DO NOT use Hungarian notation for any other type identification in identifiers</a></li><li><a href="#do-not-use-all-caps-for-constant-or-static-readonly-fields">DO NOT use all-CAPS for constant or static readonly fields</a></li><li><a href="#do-not-use-underscores-in-identifiers">DO NOT use underscores in identifiers.</a></li><li><a href="#do-not-omit-acces-modifiers">DO NOT omit acces modifiers</a></li><li><a href="#do-not-suffix-enum-names-with-enum">DO NOT suffix enum names with Enum</a></li><li><a href="#data-transfer-objects">Data Transfer Objects</a></li><li><a href="#async-methods">Async Methods</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="editorconfig">EditorConfig</h2>
+
+<p>A lot of the code style rules can be enforced by the use of an <code class="language-plaintext highlighter-rouge">.editorconfig</code> file added to the solution.</p>
+
+<p>An <code class="language-plaintext highlighter-rouge">.editorconfig</code> file for .NET projects can be found in our public <a href="https://github.com/team-noest/editorconfig/tree/master/dotnet">editorconfig repository</a>.</p>
+
+<h3 id="using-an-editorconfig-file-in-visual-studio">Using an .editorconfig file in Visual Studio</h3>
+
+<p>To use this file, you need to install the <code class="language-plaintext highlighter-rouge">EditorConfig Language Service</code> extension in Visual Studio. While VS2017 should include native support for <code class="language-plaintext highlighter-rouge">.editorconfig</code> files, it appears not to work without this extension. Also, changes made to the <code class="language-plaintext highlighter-rouge">.editorconfig</code> file seems to only apply after restarting Visual Studio. Since Visual Studio 2019 this issue has been resolved.</p>
+
+<h2 id="naming-conventions">Naming conventions</h2>
+
+<h3 id="use-pascalcasing-for-event--property-namespace--class--and-methodnames">Use PascalCasing for event-, property, namespace-, class- and methodnames</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nn">Noest.UserManagement</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">UserAccount</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">UpdateName</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="use-camelcasing-for-method-parameters-and-local-variables">Use camelCasing for method parameters and local variables</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">class</span> <span class="nc">Noest</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">CreateUserAccount</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">position</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">userAccount</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">UserAccount</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">position</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="use-predefined-type-aliases-instead-of-system-type-names">Use predefined type aliases instead of system type names</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kt">string</span> <span class="n">firstName</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">lastIndex</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">isDeleted</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+<span class="n">String</span> <span class="n">firstName</span><span class="p">;</span>
+<span class="n">Int32</span> <span class="n">lastIndex</span><span class="p">;</span>
+<span class="n">Boolean</span> <span class="n">isDeleted</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="interface-names-always-start-with-capital-letter-i">Interface names always start with capital letter I</h3>
+
+<p>The name should be a noun or adjective.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">interface</span> <span class="nc">IGadgetRepository</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">IGadgetService</span>
+<span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">interface</span> <span class="nc">IGroupable</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="avoid-using-abbreviations">Avoid using abbreviations.</h3>
+
+<p>Exceptions do exist such as <code class="language-plaintext highlighter-rouge">Id</code>, <code class="language-plaintext highlighter-rouge">Ip</code>, <code class="language-plaintext highlighter-rouge">Ftp</code>, <code class="language-plaintext highlighter-rouge">Uri</code> …</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="n">UserGroup</span> <span class="n">userGroup</span><span class="p">;</span>
+<span class="n">Assignment</span> <span class="n">taskAssignment</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+<span class="n">UserGroup</span> <span class="n">userGrp</span><span class="p">;</span>
+<span class="n">Assignment</span> <span class="n">tskAsgnmnt</span><span class="p">;</span>
+
+<span class="c1">// Exceptions</span>
+<span class="n">CustomerId</span> <span class="n">customerId</span><span class="p">;</span>
+<span class="n">XmlDocument</span> <span class="n">xmlDocument</span><span class="p">;</span>
+<span class="n">UriPart</span> <span class="n">uriPart</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="do-not-use-include-parent-class-name-within-a-property-name">DO NOT use include parent class name within a property name.</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="n">Customer</span><span class="p">.</span><span class="n">Name</span>
+
+<span class="c1">// Bad</span>
+<span class="n">Customer</span><span class="p">.</span><span class="n">CustomerName</span>
+</code></pre></div></div>
+
+<h3 id="do-not-use-hungarian-notation-for-any-other-type-identification-in-identifiers">DO NOT use Hungarian notation for any other type identification in identifiers</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="kt">int</span> <span class="n">counter</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+<span class="kt">int</span> <span class="n">iCounter</span><span class="p">;</span>
+<span class="kt">string</span> <span class="n">strName</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="do-not-use-all-caps-for-constant-or-static-readonly-fields">DO NOT use all-CAPS for constant or static readonly fields</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">public</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">DeveloperType</span> <span class="p">=</span> <span class="s">"BackEnd"</span><span class="p">;</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">DeveloperLevel</span> <span class="p">=</span> <span class="s">"Intermediate"</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+<span class="k">public</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">DEVELOPERTYPE</span> <span class="p">=</span> <span class="s">"BackEnd"</span><span class="p">;</span>
+<span class="k">public</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">DEVELOPER_LEVEL</span> <span class="p">=</span> <span class="s">"Intermediate"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="do-not-use-underscores-in-identifiers">DO NOT use underscores in identifiers.</h3>
+
+<p>Exception: private (readonly) variables.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">public</span> <span class="n">DateTime</span> <span class="n">clientAppointment</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">TimeSpan</span> <span class="n">timeLeft</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+<span class="k">public</span> <span class="n">DateTime</span> <span class="n">client_appointment</span><span class="p">;</span>
+<span class="k">public</span> <span class="n">TimeSpan</span> <span class="n">time_left</span><span class="p">;</span>
+
+<span class="c1">// Exception: private (readonly) variables must start with an underscore</span>
+<span class="k">private</span> <span class="n">DateTime</span> <span class="n">_registrationDate</span><span class="p">;</span>
+<span class="k">private</span> <span class="k">readonly</span> <span class="n">TimeSpan</span> <span class="n">_cookieLifetime</span> <span class="p">=</span> <span class="n">TimeSpan</span><span class="p">.</span><span class="nf">FromDays</span><span class="p">(</span><span class="m">7</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="do-not-omit-acces-modifiers">DO NOT omit acces modifiers</h3>
+
+<p>Declare all identifiers with the appropriate acces modifier instead of allowing the default</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Bad</span>
+<span class="k">void</span> <span class="nf">MethodName</span><span class="p">(</span><span class="kt">string</span> <span class="n">parameter</span><span class="p">);</span>
+
+<span class="c1">// Good</span>
+<span class="k">private</span> <span class="k">void</span> <span class="nf">MethodName</span><span class="p">(</span><span class="kt">string</span> <span class="n">parameter</span><span class="p">);</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">MethodName</span><span class="p">(</span><span class="kt">string</span> <span class="n">parameter</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="do-not-suffix-enum-names-with-enum">DO NOT suffix enum names with Enum</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="k">public</span> <span class="k">enum</span> <span class="n">MustardBrand</span>
+<span class="p">{</span>
+    <span class="n">DevosLemmens</span><span class="p">,</span>
+    <span class="n">Tierenteyn</span><span class="p">,</span>
+    <span class="n">Wostyn</span><span class="p">,</span>
+    <span class="n">Bister</span>
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+<span class="k">public</span> <span class="k">enum</span> <span class="n">MustardBrandEnum</span>
+<span class="p">{</span>
+    <span class="n">DevosLemmens</span><span class="p">,</span>
+    <span class="n">Tierenteyn</span><span class="p">,</span>
+    <span class="n">Wostyn</span><span class="p">,</span>
+    <span class="n">Bister</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="data-transfer-objects">Data Transfer Objects</h3>
+
+<p>If you use DTO’s in your application, we recommend that you should have one DTO class for each entity/domain object, where the name can be suffixed with <code class="language-plaintext highlighter-rouge">Dto</code>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// &lt;EntityName&gt; + &lt;Dto&gt;</span>
+<span class="n">AccountDto</span>
+<span class="n">LocationDto</span>
+</code></pre></div></div>
+
+<h3 id="async-methods">Async Methods</h3>
+
+<p>Don’t suffix Async methods with <code class="language-plaintext highlighter-rouge">Async</code>.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good</span>
+<span class="n">Task</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="nf">GetUserById</span><span class="p">(</span><span class="kt">int</span> <span class="n">userId</span><span class="p">);</span>
+<span class="n">Task</span><span class="p">&lt;</span><span class="n">User</span><span class="p">[</span><span class="k">]&gt;</span> <span class="nf">GetAllUsers</span><span class="p">();</span>
+
+<span class="c1">// Bad</span>
+<span class="n">Task</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="nf">GetUserByIdAsync</span><span class="p">(</span><span class="kt">int</span> <span class="n">userId</span><span class="p">);</span>
+<span class="n">Task</span><span class="p">&lt;</span><span class="n">User</span><span class="p">[</span><span class="k">]&gt;</span> <span class="nf">GetAllUsersAsync</span><span class="p">();</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Noest. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

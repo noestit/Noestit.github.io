@@ -1,0 +1,1632 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.23.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>EditorConfig Coding conventions - Noest docs</title>
+<meta name="description" content="This is the document site of Noest.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Noest docs">
+<meta property="og:title" content="EditorConfig Coding conventions">
+<meta property="og:url" content="http://localhost:4000/tooling/editorconfig/coding-conventions">
+
+
+  <meta property="og:description" content="This is the document site of Noest.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/tooling/editorconfig/coding-conventions">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Noest",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Noest docs Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/Block_Logo_Green.png" alt="Noest docs"></a>
+        
+        <a class="site-title" href="/">
+          Noest docs
+          <span class="site-subtitle">Code conventions, best practices and configuration files.</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tooling/index">Tooling</a>
+            </li><li class="masthead__menu-item">
+              <a href="/documentationtechniques/index">Documentation</a>
+            </li><li class="masthead__menu-item">
+              <a href="/code/index">Code</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">EditorConfig</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/tooling/editorconfig/core-options">Base setup</a></li>
+          
+            <li><a href="/tooling/editorconfig/coding-conventions" class="active">Coding Conventions</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="EditorConfig Coding conventions">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">EditorConfig Coding conventions
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#editorconfig-file">EditorConfig file</a></li><li><a href="#net-coding-conventions">.NET Coding Conventions</a><ul><li><a href="#expression-level-preferences">Expression-level preferences</a></li><li><a href="#expression-bodied-members">Expression-bodied members</a></li><li><a href="#indentation-and-spacing">Indentation and spacing</a></li><li><a href="#language-keywords-vs-bcl-types-preferences">Language keywords vs BCL types preferences</a></li><li><a href="#modifier-preferences">Modifier preferences</a></li><li><a href="#new-line-preferences">New line preferences</a></li><li><a href="#null-checking-preferences">Null-checking preferences</a></li><li><a href="#parentheses-preferences">Parentheses preferences</a></li><li><a href="#pattern-matching-preferences">Pattern matching preferences</a></li><li><a href="#this-and-me-preferences">this. and Me. preferences</a></li><li><a href="#organize-usings">Organize usings</a></li><li><a href="#parameter-preferences">Parameter preferences</a></li><li><a href="#spacing">Spacing</a></li><li><a href="#suppression-preferences">Suppression preferences</a></li><li><a href="#unnecessary-expression-preferences">Unnecessary expression preferences</a></li><li><a href="#var-preferences">var preferences</a></li><li><a href="#wrapping">Wrapping</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="editorconfig-file">EditorConfig file</h2>
+<p>nog wa nieuws</p>
+
+<h2 id="net-coding-conventions">.NET Coding Conventions</h2>
+<p>[*.{cs,vb}] for all C# and VB files.</p>
+
+<h3 id="expression-level-preferences">Expression-level preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dotnet_style_collection_initializer</span>                         <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_explicit_tuple_names</span>                           <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_object_initializer</span>                             <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_prefer_auto_properties</span>                         <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">dotnet_style_prefer_compound_assignment</span>                     <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_prefer_conditional_expression_over_assignment</span>  <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">dotnet_style_prefer_conditional_expression_over_return</span>      <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">dotnet_style_prefer_inferred_anonymous_type_member_names</span>    <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_prefer_inferred_tuple_names</span>                    <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_prefer_simplified_boolean_expressions</span>          <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_prefer_simplified_interpolation</span>                <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="err">#</span> <span class="n">Add</span> <span class="n">missing</span> <span class="n">cases</span> <span class="n">to</span> <span class="k">switch</span> <span class="n">statement</span> <span class="p">-</span> <span class="n">This</span> <span class="n">rule</span> <span class="n">has</span> <span class="n">no</span> <span class="n">code</span> <span class="n">style</span> <span class="n">option</span><span class="p">.</span>
+<span class="err">#</span> <span class="n">Convert</span> <span class="n">anonymous</span> <span class="n">type</span> <span class="n">to</span> <span class="n">tuple</span> <span class="p">-</span> <span class="n">This</span> <span class="n">rule</span> <span class="n">has</span> <span class="n">no</span> <span class="n">code</span> <span class="n">style</span> <span class="n">option</span><span class="p">.</span>
+<span class="err">#</span> <span class="n">Use</span> <span class="err">'</span><span class="n">System</span><span class="p">.</span><span class="n">HashCode</span><span class="p">.</span><span class="n">Combine</span><span class="err">'</span> <span class="p">-</span> <span class="n">This</span> <span class="n">rule</span> <span class="n">has</span> <span class="n">no</span> <span class="n">code</span> <span class="n">style</span> <span class="n">option</span><span class="p">.</span>
+<span class="err">#</span> <span class="n">Convert</span> <span class="err">'</span><span class="k">typeof</span><span class="err">'</span> <span class="n">to</span> <span class="err">'</span><span class="k">nameof</span><span class="err">'</span> <span class="p">-</span> <span class="n">This</span> <span class="n">rule</span> <span class="n">has</span> <span class="n">no</span> <span class="n">code</span> <span class="n">style</span> <span class="n">option</span><span class="p">.</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0028#dotnet_style_collection_initializer">dotnet_style_collection_initializer</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_collection_initializer = true</span>
+  <span class="kt">var</span> <span class="n">list</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span> <span class="p">};</span>
+
+  <span class="c1">// dotnet_style_collection_initializer = false</span>
+  <span class="kt">var</span> <span class="n">list</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;();</span>
+  <span class="n">list</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="n">list</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+  <span class="n">list</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0033#dotnet_style_explicit_tuple_names">dotnet_style_explicit_tuple_names</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_explicit_tuple_names = true</span>
+  <span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="n">customer</span> <span class="p">=</span> <span class="nf">GetCustomer</span><span class="p">();</span>
+  <span class="kt">var</span> <span class="n">name</span> <span class="p">=</span> <span class="n">customer</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+
+  <span class="c1">// dotnet_style_explicit_tuple_names = false</span>
+  <span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="n">customer</span> <span class="p">=</span> <span class="nf">GetCustomer</span><span class="p">();</span>
+  <span class="kt">var</span> <span class="n">name</span> <span class="p">=</span> <span class="n">customer</span><span class="p">.</span><span class="n">Item1</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0017#dotnet_style_object_initializer">dotnet_style_object_initializer</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_object_initializer = true</span>
+  <span class="kt">var</span> <span class="n">c</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">()</span> <span class="p">{</span> <span class="n">Age</span> <span class="p">=</span> <span class="m">21</span> <span class="p">};</span>
+
+  <span class="c1">// dotnet_style_object_initializer = false</span>
+  <span class="kt">var</span> <span class="n">c</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">();</span>
+  <span class="n">c</span><span class="p">.</span><span class="n">Age</span> <span class="p">=</span> <span class="m">21</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0032#dotnet_style_prefer_auto_properties">dotnet_style_prefer_auto_properties</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_prefer_auto_properties = true</span>
+  <span class="k">private</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="c1">// dotnet_style_prefer_auto_properties = false</span>
+  <span class="k">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+
+  <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span>
+  <span class="p">{</span>
+      <span class="k">get</span>
+      <span class="p">{</span>
+          <span class="k">return</span> <span class="n">age</span><span class="p">;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0054-ide0074#dotnet_style_prefer_compound_assignment">dotnet_style_prefer_compound_assignment</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_prefer_compound_assignment = true</span>
+  <span class="n">x</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
+
+  <span class="c1">// dotnet_style_prefer_compound_assignment = false</span>
+  <span class="n">x</span> <span class="p">=</span> <span class="n">x</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0045#dotnet_style_prefer_conditional_expression_over_assignment">dotnet_style_prefer_conditional_expression_over_assignment</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_prefer_conditional_expression_over_assignment = true</span>
+  <span class="kt">string</span> <span class="n">s</span> <span class="p">=</span> <span class="n">expr</span> <span class="p">?</span> <span class="s">"hello"</span> <span class="p">:</span> <span class="s">"world"</span><span class="p">;</span>
+
+  <span class="c1">// dotnet_style_prefer_conditional_expression_over_assignment = false</span>
+  <span class="kt">string</span> <span class="n">s</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">s</span> <span class="p">=</span> <span class="s">"hello"</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+      <span class="n">s</span> <span class="p">=</span> <span class="s">"world"</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0046#dotnet_style_prefer_conditional_expression_over_return">dotnet_style_prefer_conditional_expression_over_return</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_prefer_conditional_expression_over_return = true</span>
+  <span class="k">return</span> <span class="n">expr</span> <span class="p">?</span> <span class="s">"hello"</span> <span class="p">:</span> <span class="s">"world"</span>
+
+  <span class="c1">// dotnet_style_prefer_conditional_expression_over_return = false</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="k">return</span> <span class="s">"hello"</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+      <span class="k">return</span> <span class="s">"world"</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0037#dotnet_style_prefer_inferred_anonymous_type_member_names">dotnet_style_prefer_inferred_anonymous_type_member_names</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_prefer_inferred_anonymous_type_member_names = true</span>
+  <span class="kt">var</span> <span class="n">anon</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span> <span class="n">age</span><span class="p">,</span> <span class="n">name</span> <span class="p">};</span>
+
+  <span class="c1">// dotnet_style_prefer_inferred_anonymous_type_member_names = false</span>
+  <span class="kt">var</span> <span class="n">anon</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span> <span class="n">age</span> <span class="p">=</span> <span class="n">age</span><span class="p">,</span> <span class="n">name</span> <span class="p">=</span> <span class="n">name</span> <span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0037#dotnet_style_prefer_inferred_tuple_names">dotnet_style_prefer_inferred_tuple_names</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_prefer_inferred_tuple_names = true</span>
+  <span class="kt">var</span> <span class="n">tuple</span> <span class="p">=</span> <span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+
+  <span class="c1">// dotnet_style_prefer_inferred_tuple_names = false</span>
+  <span class="kt">var</span> <span class="n">tuple</span> <span class="p">=</span> <span class="p">(</span><span class="n">age</span><span class="p">:</span> <span class="n">age</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0075#dotnet_style_prefer_simplified_boolean_expressions">dotnet_style_prefer_simplified_boolean_expressions</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_prefer_simplified_boolean_expressions = true</span>
+  <span class="kt">var</span> <span class="n">result1</span> <span class="p">=</span> <span class="nf">M1</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="nf">M2</span><span class="p">();</span>
+  <span class="kt">var</span> <span class="n">result2</span> <span class="p">=</span> <span class="nf">M1</span><span class="p">()</span> <span class="p">||</span> <span class="nf">M2</span><span class="p">();</span>
+
+  <span class="c1">// dotnet_style_prefer_simplified_boolean_expressions = false</span>
+  <span class="kt">var</span> <span class="n">result1</span> <span class="p">=</span> <span class="nf">M1</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="nf">M2</span><span class="p">()</span> <span class="p">?</span> <span class="k">true</span> <span class="p">:</span> <span class="k">false</span><span class="p">;</span>
+  <span class="kt">var</span> <span class="n">result2</span> <span class="p">=</span> <span class="nf">M1</span><span class="p">()</span> <span class="p">?</span> <span class="k">true</span> <span class="p">:</span> <span class="nf">M2</span><span class="p">();</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0071#dotnet_style_prefer_simplified_interpolation">dotnet_style_prefer_simplified_interpolation</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_prefer_simplified_interpolation = true</span>
+  <span class="kt">var</span> <span class="n">str</span> <span class="p">=</span> <span class="s">$"prefix </span><span class="p">{</span><span class="n">someValue</span><span class="p">}</span><span class="s"> suffix"</span><span class="p">;</span>
+
+  <span class="c1">// dotnet_style_prefer_simplified_interpolation = false</span>
+  <span class="kt">var</span> <span class="n">str</span> <span class="p">=</span> <span class="s">$"prefix </span><span class="p">{</span><span class="n">someValue</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()}</span><span class="s"> suffix"</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="expression-bodied-members">Expression-bodied members</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_style_expression_bodied_accessors</span>        <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_expression_bodied_constructors</span>     <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_expression_bodied_indexers</span>         <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_expression_bodied_lambdas</span>          <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_expression_bodied_local_functions</span>  <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_expression_bodied_methods</span>          <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_expression_bodied_operators</span>        <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_expression_bodied_properties</span>       <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">silent</span>
+</code></pre></div></div>
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0027#csharp_style_expression_bodied_accessors">csharp_style_expression_bodied_accessors</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_expression_bodied_accessors = true</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span> <span class="p">=&gt;</span> <span class="n">_age</span><span class="p">;</span> <span class="k">set</span> <span class="p">=&gt;</span> <span class="n">_age</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="c1">// csharp_style_expression_bodied_accessors = false</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_age</span><span class="p">;</span> <span class="p">}</span> <span class="k">set</span> <span class="p">{</span> <span class="n">_age</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0021#csharp_style_expression_bodied_constructors">csharp_style_expression_bodied_constructors</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_expression_bodied_constructors = true</span>
+  <span class="k">public</span> <span class="nf">Customer</span><span class="p">(</span><span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Age</span> <span class="p">=</span> <span class="n">age</span><span class="p">;</span>
+
+  <span class="c1">// csharp_style_expression_bodied_constructors = false</span>
+  <span class="k">public</span> <span class="nf">Customer</span><span class="p">(</span><span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span> <span class="n">Age</span> <span class="p">=</span> <span class="n">age</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0026#csharp_style_expression_bodied_indexers">csharp_style_expression_bodied_indexers</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_expression_bodied_indexers = true</span>
+  <span class="k">public</span> <span class="n">T</span> <span class="k">this</span><span class="p">[</span><span class="kt">int</span> <span class="n">i</span><span class="p">]</span> <span class="p">=&gt;</span> <span class="n">_values</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+  <span class="c1">// csharp_style_expression_bodied_indexers = false</span>
+  <span class="k">public</span> <span class="n">T</span> <span class="k">this</span><span class="p">[</span><span class="kt">int</span> <span class="n">i</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_values</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="p">}</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0053#csharp_style_expression_bodied_lambdas">csharp_style_expression_bodied_lambdas</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_expression_bodied_lambdas = true</span>
+  <span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;</span> <span class="n">square</span> <span class="p">=</span> <span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="p">*</span> <span class="n">x</span><span class="p">;</span>
+
+  <span class="c1">// csharp_style_expression_bodied_lambdas = false</span>
+  <span class="n">Func</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;</span> <span class="n">square</span> <span class="p">=</span> <span class="n">x</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="n">x</span> <span class="p">*</span> <span class="n">x</span><span class="p">;</span> <span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0061#csharp_style_expression_bodied_local_functions">csharp_style_expression_bodied_local_functions</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_expression_bodied_local_functions = true</span>
+  <span class="k">void</span> <span class="nf">M</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nf">Hello</span><span class="p">();</span>
+      <span class="k">void</span> <span class="nf">Hello</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_style_expression_bodied_local_functions = false</span>
+  <span class="k">void</span> <span class="nf">M</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nf">Hello</span><span class="p">();</span>
+      <span class="k">void</span> <span class="nf">Hello</span><span class="p">()</span>
+      <span class="p">{</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0022#csharp_style_expression_bodied_methods">csharp_style_expression_bodied_methods</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_expression_bodied_methods = true</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="nf">GetAge</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="n">Age</span><span class="p">;</span>
+
+  <span class="c1">// csharp_style_expression_bodied_methods = false</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="nf">GetAge</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="n">Age</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0023-ide0024#csharp_style_expression_bodied_operators">csharp_style_expression_bodied_operators</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_expression_bodied_operators = true</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="n">ComplexNumber</span> <span class="k">operator</span> <span class="p">+</span> <span class="p">(</span><span class="n">ComplexNumber</span> <span class="n">c1</span><span class="p">,</span> <span class="n">ComplexNumber</span> <span class="n">c2</span><span class="p">)</span>
+      <span class="p">=&gt;</span> <span class="k">new</span> <span class="nf">ComplexNumber</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">Real</span> <span class="p">+</span> <span class="n">c2</span><span class="p">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">c1</span><span class="p">.</span><span class="n">Imaginary</span> <span class="p">+</span> <span class="n">c2</span><span class="p">.</span><span class="n">Imaginary</span><span class="p">);</span>
+
+  <span class="c1">// csharp_style_expression_bodied_operators = false</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="n">ComplexNumber</span> <span class="k">operator</span> <span class="p">+</span> <span class="p">(</span><span class="n">ComplexNumber</span> <span class="n">c1</span><span class="p">,</span> <span class="n">ComplexNumber</span> <span class="n">c2</span><span class="p">)</span>
+  <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nf">ComplexNumber</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">Real</span> <span class="p">+</span> <span class="n">c2</span><span class="p">.</span><span class="n">Real</span><span class="p">,</span> <span class="n">c1</span><span class="p">.</span><span class="n">Imaginary</span> <span class="p">+</span> <span class="n">c2</span><span class="p">.</span><span class="n">Imaginary</span><span class="p">);</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0025#csharp_style_expression_bodied_properties">csharp_style_expression_bodied_properties</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_expression_bodied_properties = true</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">=&gt;</span> <span class="n">_age</span><span class="p">;</span>
+
+  <span class="c1">// csharp_style_expression_bodied_properties = false</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_age</span><span class="p">;</span> <span class="p">}}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="indentation-and-spacing">Indentation and spacing</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_indent_block_contents</span>            <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_indent_braces</span>                    <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_indent_case_contents</span>             <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_indent_case_contents_when_block</span>  <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_indent_labels</span>                    <span class="p">=</span> <span class="n">one_less_than_current</span>
+<span class="n">csharp_indent_switch_labels</span>             <span class="p">=</span> <span class="k">false</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_indent_case_contents">csharp_indent_case_contents</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_indent_case_contents = true</span>
+  <span class="k">switch</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">:</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is red"</span><span class="p">);</span>
+          <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="n">Color</span><span class="p">.</span><span class="n">Blue</span><span class="p">:</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is blue"</span><span class="p">);</span>
+          <span class="k">break</span><span class="p">;</span>
+      <span class="k">default</span><span class="p">:</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is unknown."</span><span class="p">);</span>
+          <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_indent_case_contents = false</span>
+  <span class="k">switch</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">:</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is red"</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="n">Color</span><span class="p">.</span><span class="n">Blue</span><span class="p">:</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is blue"</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+      <span class="k">default</span><span class="p">:</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is unknown."</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_indent_switch_labels">csharp_indent_switch_labels</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_indent_switch_labels = true</span>
+  <span class="k">switch</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">:</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is red"</span><span class="p">);</span>
+          <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="n">Color</span><span class="p">.</span><span class="n">Blue</span><span class="p">:</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is blue"</span><span class="p">);</span>
+          <span class="k">break</span><span class="p">;</span>
+      <span class="k">default</span><span class="p">:</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is unknown."</span><span class="p">);</span>
+          <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_indent_switch_labels = false</span>
+  <span class="k">switch</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">:</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is red"</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="n">Color</span><span class="p">.</span><span class="n">Blue</span><span class="p">:</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is blue"</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="k">default</span><span class="p">:</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"The color is unknown."</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_indent_labels">csharp_indent_labels</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_indent_labels= flush_left</span>
+  <span class="k">class</span> <span class="nc">C</span>
+  <span class="p">{</span>
+      <span class="k">private</span> <span class="kt">string</span> <span class="nf">MyMethod</span><span class="p">(...)</span>
+      <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(...)</span> <span class="p">{</span>
+              <span class="k">goto</span> <span class="n">error</span><span class="p">;</span>
+          <span class="p">}</span>
+  <span class="n">error</span><span class="p">:</span>
+          <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="p">(...);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_indent_labels = one_less_than_current</span>
+  <span class="k">class</span> <span class="nc">C</span>
+  <span class="p">{</span>
+      <span class="k">private</span> <span class="kt">string</span> <span class="nf">MyMethod</span><span class="p">(...)</span>
+      <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(...)</span> <span class="p">{</span>
+              <span class="k">goto</span> <span class="n">error</span><span class="p">;</span>
+          <span class="p">}</span>
+      <span class="n">error</span><span class="p">:</span>
+          <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="p">(...);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_indent_labels= no_change</span>
+  <span class="k">class</span> <span class="nc">C</span>
+  <span class="p">{</span>
+      <span class="k">private</span> <span class="kt">string</span> <span class="nf">MyMethod</span><span class="p">(...)</span>
+      <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(...)</span> <span class="p">{</span>
+              <span class="k">goto</span> <span class="n">error</span><span class="p">;</span>
+          <span class="p">}</span>
+          <span class="n">error</span><span class="p">:</span>
+          <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="p">(...);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_indent_block_contents">csharp_indent_block_contents</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_indent_block_contents = true</span>
+  <span class="k">static</span> <span class="k">void</span> <span class="nf">Hello</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_indent_block_contents = false</span>
+  <span class="k">static</span> <span class="k">void</span> <span class="nf">Hello</span><span class="p">()</span>
+  <span class="p">{</span>
+  <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_indent_braces">csharp_indent_braces</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_indent_braces = true</span>
+  <span class="k">static</span> <span class="k">void</span> <span class="nf">Hello</span><span class="p">()</span>
+      <span class="p">{</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+      <span class="p">}</span>
+
+  <span class="c1">// csharp_indent_braces = false</span>
+  <span class="k">static</span> <span class="k">void</span> <span class="nf">Hello</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_indent_case_contents_when_block">csharp_indent_case_contents_when_block</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_indent_case_contents_when_block = true</span>
+  <span class="k">case</span> <span class="m">0</span><span class="p">:</span>
+      <span class="p">{</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+          <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+
+  <span class="c1">// csharp_indent_case_contents_when_block = false</span>
+  <span class="k">case</span> <span class="m">0</span><span class="p">:</span>
+  <span class="p">{</span>
+      <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="language-keywords-vs-bcl-types-preferences">Language keywords vs BCL types preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dotnet_style_predefined_type_for_locals_parameters_members</span>  <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">error</span>
+<span class="n">dotnet_style_predefined_type_for_member_access</span>              <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">error</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0049#dotnet_style_predefined_type_for_locals_parameters_members">dotnet_style_predefined_type_for_locals_parameters_members</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_predefined_type_for_locals_parameters_members = true</span>
+  <span class="k">private</span> <span class="kt">int</span> <span class="n">_member</span><span class="p">;</span>
+    
+  <span class="c1">// dotnet_style_predefined_type_for_locals_parameters_members = false</span>
+  <span class="k">private</span> <span class="n">Int32</span> <span class="n">_member</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0049#dotnet_style_predefined_type_for_member_access">dotnet_style_predefined_type_for_member_access</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_predefined_type_for_member_access = true</span>
+  <span class="kt">var</span> <span class="n">local</span> <span class="p">=</span> <span class="kt">int</span><span class="p">.</span><span class="n">MaxValue</span><span class="p">;</span>
+    
+  <span class="c1">// dotnet_style_predefined_type_for_member_access = false</span>
+  <span class="kt">var</span> <span class="n">local</span> <span class="p">=</span> <span class="n">Int32</span><span class="p">.</span><span class="n">MaxValue</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="modifier-preferences">Modifier preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_prefer_static_local_function</span>             <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">csharp_preferred_modifier_order</span>                 <span class="p">=</span> <span class="k">public</span><span class="p">,</span> <span class="k">private</span><span class="p">,</span> <span class="k">protected</span><span class="p">,</span> <span class="k">internal</span><span class="p">,</span> <span class="k">static</span><span class="p">,</span> <span class="k">extern</span><span class="p">,</span> <span class="k">new</span><span class="p">,</span> <span class="k">virtual</span><span class="p">,</span> <span class="k">abstract</span><span class="p">,</span> <span class="k">sealed</span><span class="p">,</span> <span class="k">override</span><span class="p">,</span> <span class="k">readonly</span><span class="p">,</span> <span class="k">unsafe</span><span class="p">,</span> <span class="k">volatile</span><span class="p">,</span> <span class="k">async</span><span class="p">:</span><span class="n">silent</span>
+<span class="n">dotnet_style_readonly_field</span>                     <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_require_accessibility_modifiers</span>    <span class="p">=</span> <span class="n">for_non_interface_members</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">visual_basic_preferred_modifier_order</span>           <span class="p">=</span> <span class="n">Partial</span><span class="p">,</span> <span class="n">Default</span><span class="p">,</span> <span class="n">Private</span><span class="p">,</span> <span class="n">Protected</span><span class="p">,</span> <span class="n">Public</span><span class="p">,</span> <span class="n">Friend</span><span class="p">,</span> <span class="n">NotOverridable</span><span class="p">,</span> <span class="n">Overridable</span><span class="p">,</span> <span class="n">MustOverride</span><span class="p">,</span> <span class="n">Overloads</span><span class="p">,</span> <span class="n">Overrides</span><span class="p">,</span> <span class="n">MustInherit</span><span class="p">,</span> <span class="n">NotInheritable</span><span class="p">,</span> <span class="n">Static</span><span class="p">,</span> <span class="n">Shared</span><span class="p">,</span> <span class="n">Shadows</span><span class="p">,</span> <span class="n">ReadOnly</span><span class="p">,</span> <span class="n">WriteOnly</span><span class="p">,</span> <span class="n">Dim</span><span class="p">,</span> <span class="n">Const</span><span class="p">,</span> <span class="n">WithEvents</span><span class="p">,</span> <span class="n">Widening</span><span class="p">,</span> <span class="n">Narrowing</span><span class="p">,</span> <span class="n">Custom</span><span class="p">,</span> <span class="n">Async</span><span class="p">:</span><span class="n">silent</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0062#csharp_prefer_static_local_function">csharp_prefer_static_local_function</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_prefer_static_local_function = true</span>
+  <span class="k">void</span> <span class="nf">M</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nf">Hello</span><span class="p">();</span>
+      <span class="k">static</span> <span class="k">void</span> <span class="nf">Hello</span><span class="p">()</span>
+      <span class="p">{</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+    
+  <span class="c1">// csharp_prefer_static_local_function = false</span>
+  <span class="k">void</span> <span class="nf">M</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nf">Hello</span><span class="p">();</span>
+      <span class="k">void</span> <span class="nf">Hello</span><span class="p">()</span>
+      <span class="p">{</span>
+          <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0036#csharp_preferred_modifier_order">csharp_preferred_modifier_order</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async</span>
+  <span class="k">class</span> <span class="nc">MyClass</span>
+  <span class="p">{</span>
+      <span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">_daysInYear</span> <span class="p">=</span> <span class="m">365</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0044#dotnet_style_readonly_field">dotnet_style_readonly_field</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_readonly_field = true</span>
+  <span class="k">class</span> <span class="nc">MyClass</span>
+  <span class="p">{</span>
+      <span class="k">private</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">_daysInYear</span> <span class="p">=</span> <span class="m">365</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0040#dotnet_style_require_accessibility_modifiers">dotnet_style_require_accessibility_modifiers</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_require_accessibility_modifiers = always</span>
+  <span class="c1">// dotnet_style_require_accessibility_modifiers = for_non_interface_members</span>
+  <span class="k">class</span> <span class="nc">MyClass</span>
+  <span class="p">{</span>
+      <span class="k">private</span> <span class="k">const</span> <span class="kt">string</span> <span class="n">thisFieldIsConst</span> <span class="p">=</span> <span class="s">"constant"</span><span class="p">;</span>
+  <span class="p">}</span>
+    
+  <span class="c1">// dotnet_style_require_accessibility_modifiers = never</span>
+  <span class="k">class</span> <span class="nc">MyClass</span>
+  <span class="p">{</span>
+      <span class="k">const</span> <span class="kt">string</span> <span class="n">thisFieldIsConst</span> <span class="p">=</span> <span class="s">"constant"</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0036#visual_basic_preferred_modifier_order">visual_basic_preferred_modifier_order</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="err">'</span> <span class="n">visual_basic_preferred_modifier_order</span> <span class="p">=</span> <span class="n">Partial</span><span class="p">,</span><span class="n">Default</span><span class="p">,</span><span class="n">Private</span><span class="p">,</span><span class="n">Protected</span><span class="p">,</span><span class="n">Public</span><span class="p">,</span><span class="n">Friend</span><span class="p">,</span><span class="n">NotOverridable</span><span class="p">,</span><span class="n">Overridable</span><span class="p">,</span><span class="n">MustOverride</span><span class="p">,</span><span class="n">Overloads</span><span class="p">,</span><span class="n">Overrides</span><span class="p">,</span><span class="n">MustInherit</span><span class="p">,</span><span class="n">NotInheritable</span><span class="p">,</span><span class="n">Static</span><span class="p">,</span><span class="n">Shared</span><span class="p">,</span><span class="n">Shadows</span><span class="p">,</span><span class="n">ReadOnly</span><span class="p">,</span><span class="n">WriteOnly</span><span class="p">,</span><span class="n">Dim</span><span class="p">,</span><span class="n">Const</span><span class="p">,</span><span class="n">WithEvents</span><span class="p">,</span><span class="n">Widening</span><span class="p">,</span><span class="n">Narrowing</span><span class="p">,</span><span class="n">Custom</span><span class="p">,</span><span class="n">Async</span>
+  <span class="n">Public</span> <span class="n">Class</span> <span class="n">MyClass</span>
+      <span class="n">Private</span> <span class="n">Shared</span> <span class="n">ReadOnly</span> <span class="n">daysInYear</span> <span class="n">As</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">365</span>
+  <span class="n">End</span> <span class="n">Class</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="new-line-preferences">New line preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_new_line_before_catch</span>                            <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_new_line_before_else</span>                             <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_new_line_before_finally</span>                          <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_new_line_before_members_in_anonymous_types</span>       <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_new_line_before_members_in_object_initializers</span>   <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_new_line_before_open_brace</span>                       <span class="p">=</span> <span class="n">all</span>
+<span class="n">csharp_new_line_between_query_expression_clauses</span>        <span class="p">=</span> <span class="k">true</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_new_line_before_open_brace">csharp_new_line_before_open_brace</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_new_line_before_open_brace = all</span>
+  <span class="k">void</span> <span class="nf">MyMethod</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(...)</span>
+      <span class="p">{</span>
+          <span class="p">...</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+    
+  <span class="c1">// csharp_new_line_before_open_brace = none</span>
+  <span class="k">void</span> <span class="nf">MyMethod</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(...)</span> <span class="p">{</span>
+          <span class="p">...</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_new_line_before_else">csharp_new_line_before_else</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_new_line_before_else = true</span>
+  <span class="k">if</span> <span class="p">(...)</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+    
+  <span class="c1">// csharp_new_line_before_else = false</span>
+  <span class="k">if</span> <span class="p">(...)</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_new_line_before_catch">csharp_new_line_before_catch</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_new_line_before_catch = true</span>
+  <span class="k">try</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_new_line_before_catch = false</span>
+  <span class="k">try</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_new_line_before_finally">csharp_new_line_before_finally</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_new_line_before_finally = true</span>
+  <span class="k">try</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+  <span class="k">finally</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_new_line_before_finally = false</span>
+  <span class="k">try</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_new_line_before_members_in_object_initializers">csharp_new_line_before_members_in_object_initializers</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_new_line_before_members_in_object_initializers = true</span>
+  <span class="kt">var</span> <span class="n">z</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">B</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="n">A</span> <span class="p">=</span> <span class="m">3</span><span class="p">,</span>
+      <span class="n">B</span> <span class="p">=</span> <span class="m">4</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_new_line_before_members_in_object_initializers = false</span>
+  <span class="kt">var</span> <span class="n">z</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">B</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="n">A</span> <span class="p">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">B</span> <span class="p">=</span> <span class="m">4</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_new_line_before_members_in_anonymous_types">csharp_new_line_before_members_in_anonymous_types</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_new_line_before_members_in_anonymous_types = true</span>
+  <span class="kt">var</span> <span class="n">z</span> <span class="p">=</span> <span class="k">new</span>
+  <span class="p">{</span>
+      <span class="n">A</span> <span class="p">=</span> <span class="m">3</span><span class="p">,</span>
+      <span class="n">B</span> <span class="p">=</span> <span class="m">4</span>
+  <span class="p">}</span>
+    
+  <span class="c1">// csharp_new_line_before_members_in_anonymous_types = false</span>
+  <span class="kt">var</span> <span class="n">z</span> <span class="p">=</span> <span class="k">new</span>
+  <span class="p">{</span>
+      <span class="n">A</span> <span class="p">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">B</span> <span class="p">=</span> <span class="m">4</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_new_line_between_query_expression_clauses">csharp_new_line_between_query_expression_clauses</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_new_line_between_query_expression_clauses = true</span>
+  <span class="kt">var</span> <span class="n">q</span> <span class="p">=</span> <span class="k">from</span> <span class="n">a</span> <span class="k">in</span> <span class="n">e</span>
+          <span class="k">from</span> <span class="n">b</span> <span class="k">in</span> <span class="n">e</span>
+          <span class="k">select</span> <span class="n">a</span> <span class="p">*</span> <span class="n">b</span><span class="p">;</span>
+    
+  <span class="c1">// csharp_new_line_between_query_expression_clauses = false</span>
+  <span class="kt">var</span> <span class="n">q</span> <span class="p">=</span> <span class="k">from</span> <span class="n">a</span> <span class="k">in</span> <span class="n">e</span> <span class="k">from</span> <span class="n">b</span> <span class="k">in</span> <span class="n">e</span>
+          <span class="k">select</span> <span class="n">a</span> <span class="p">*</span> <span class="n">b</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="null-checking-preferences">Null-checking preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_style_conditional_delegate_call</span>                              <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_coalesce_expression</span>                                    <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_null_propagation</span>                                       <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">dotnet_style_prefer_is_null_check_over_reference_equality_method</span>    <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide1005">csharp_style_conditional_delegate_call</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_conditional_delegate_call = true</span>
+  <span class="n">func</span><span class="p">?.</span><span class="nf">Invoke</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+
+  <span class="c1">// csharp_style_conditional_delegate_call = false</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">func</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span> <span class="nf">func</span><span class="p">(</span><span class="n">args</span><span class="p">);</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0029-ide0030#dotnet_style_coalesce_expression">dotnet_style_coalesce_expression</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_coalesce_expression = true</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">x</span> <span class="p">??</span> <span class="n">y</span><span class="p">;</span>
+
+  <span class="c1">// dotnet_style_coalesce_expression = false</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">x</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">?</span> <span class="n">x</span> <span class="p">:</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// or</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">x</span> <span class="p">==</span> <span class="k">null</span> <span class="p">?</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0031#dotnet_style_null_propagation">dotnet_style_null_propagation</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_null_propagation = true</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">o</span><span class="p">?.</span><span class="nf">ToString</span><span class="p">();</span>
+
+  <span class="c1">// dotnet_style_null_propagation = false</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">o</span> <span class="p">==</span> <span class="k">null</span> <span class="p">?</span> <span class="k">null</span> <span class="p">:</span> <span class="n">o</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span> <span class="c1">// or</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">o</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">?</span> <span class="n">o</span><span class="p">.</span><span class="nf">String</span><span class="p">()</span> <span class="p">:</span> <span class="k">null</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0041#dotnet_style_prefer_is_null_check_over_reference_equality_method">dotnet_style_prefer_is_null_check_over_reference_equality_method</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_prefer_is_null_check_over_reference_equality_method = true</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">value</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+      <span class="k">return</span><span class="p">;</span>
+
+  <span class="c1">// dotnet_style_prefer_is_null_check_over_reference_equality_method = false</span>
+  <span class="k">if</span> <span class="p">(</span><span class="kt">object</span><span class="p">.</span><span class="nf">ReferenceEquals</span><span class="p">(</span><span class="k">value</span><span class="p">,</span> <span class="k">null</span><span class="p">))</span>
+      <span class="k">return</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="parentheses-preferences">Parentheses preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dotnet_style_parentheses_in_arithmetic_binary_operators</span>     <span class="p">=</span> <span class="n">always_for_clarity</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">dotnet_style_parentheses_in_other_binary_operators</span>          <span class="p">=</span> <span class="n">always_for_clarity</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">dotnet_style_parentheses_in_other_operators</span>                 <span class="p">=</span> <span class="n">never_if_unnecessary</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">dotnet_style_parentheses_in_relational_binary_operators</span>     <span class="p">=</span> <span class="n">always_for_clarity</span> <span class="p">:</span> <span class="n">silent</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0047-ide0048#dotnet_style_parentheses_in_arithmetic_binary_operators">dotnet_style_parentheses_in_arithmetic_binary_operators</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="p">(</span><span class="n">b</span> <span class="p">*</span> <span class="n">c</span><span class="p">);</span>
+
+  <span class="c1">// dotnet_style_parentheses_in_arithmetic_binary_operators = never_if_unnecessary</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span> <span class="p">*</span> <span class="n">c</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0047-ide0048#dotnet_style_parentheses_in_other_binary_operators">dotnet_style_parentheses_in_other_binary_operators</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_parentheses_in_other_binary_operators = always_for_clarity</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">a</span> <span class="p">||</span> <span class="p">(</span><span class="n">b</span> <span class="p">&amp;&amp;</span> <span class="n">c</span><span class="p">);</span>
+
+  <span class="c1">// dotnet_style_parentheses_in_other_binary_operators = never_if_unnecessary</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">a</span> <span class="p">||</span> <span class="n">b</span> <span class="p">&amp;&amp;</span> <span class="n">c</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0047-ide0048#dotnet_style_parentheses_in_other_operators">dotnet_style_parentheses_in_other_operators</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_parentheses_in_other_operators = always_for_clarity</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">b</span><span class="p">).</span><span class="n">Length</span><span class="p">;</span>
+
+  <span class="c1">// dotnet_style_parentheses_in_other_operators = never_if_unnecessary</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">a</span><span class="p">.</span><span class="n">b</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0047-ide0048#dotnet_style_parentheses_in_relational_binary_operators">dotnet_style_parentheses_in_relational_binary_operators</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="p">(</span><span class="n">a</span> <span class="p">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">==</span> <span class="p">(</span><span class="n">c</span> <span class="p">&gt;</span> <span class="n">d</span><span class="p">);</span>
+
+  <span class="c1">// dotnet_style_parentheses_in_relational_binary_operators = never_if_unnecessary</span>
+  <span class="kt">var</span> <span class="n">v</span> <span class="p">=</span> <span class="n">a</span> <span class="p">&lt;</span> <span class="n">b</span> <span class="p">==</span> <span class="n">c</span> <span class="p">&gt;</span> <span class="n">d</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="pattern-matching-preferences">Pattern matching preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_style_pattern_matching_over_as_with_null_check</span>   <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">csharp_style_pattern_matching_over_is_with_cast_check</span>   <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">csharp_style_prefer_not_pattern</span>                         <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+<span class="n">csharp_style_prefer_pattern_matching</span>                    <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_prefer_switch_expression</span>                   <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">suggestion</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0019#csharp_style_pattern_matching_over_as_with_null_check">csharp_style_pattern_matching_over_as_with_null_check</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_pattern_matching_over_as_with_null_check = true</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">o</span> <span class="k">is</span> <span class="kt">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{...}</span>
+
+  <span class="c1">// csharp_style_pattern_matching_over_as_with_null_check = false</span>
+  <span class="kt">var</span> <span class="n">s</span> <span class="p">=</span> <span class="n">o</span> <span class="k">as</span> <span class="kt">string</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{...}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0020-ide0038#csharp_style_pattern_matching_over_is_with_cast_check">csharp_style_pattern_matching_over_is_with_cast_check</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_pattern_matching_over_is_with_cast_check = true</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">o</span> <span class="k">is</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{...}</span>
+
+  <span class="c1">// csharp_style_pattern_matching_over_is_with_cast_check = false</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">o</span> <span class="k">is</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span><span class="kt">var</span> <span class="n">i</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">o</span><span class="p">;</span> <span class="p">...</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0083#csharp_style_prefer_not_pattern">csharp_style_prefer_not_pattern</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_prefer_not_pattern = true</span>
+  <span class="kt">var</span> <span class="n">y</span> <span class="p">=</span> <span class="n">o</span> <span class="k">is</span> <span class="n">not</span> <span class="n">C</span> <span class="n">c</span><span class="p">;</span>
+
+  <span class="c1">// csharp_style_prefer_not_pattern = false</span>
+  <span class="kt">var</span> <span class="n">y</span> <span class="p">=</span> <span class="p">!(</span><span class="n">o</span> <span class="k">is</span> <span class="n">C</span> <span class="n">c</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0078#csharp_style_prefer_pattern_matching">csharp_style_prefer_pattern_matching</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_prefer_pattern_matching = true</span>
+  <span class="kt">var</span> <span class="n">x</span> <span class="p">=</span> <span class="n">i</span> <span class="k">is</span> <span class="k">default</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">or</span> <span class="p">&gt;</span> <span class="p">(</span><span class="k">default</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+  <span class="kt">var</span> <span class="n">y</span> <span class="p">=</span> <span class="n">o</span> <span class="k">is</span> <span class="n">not</span> <span class="n">C</span> <span class="n">c</span><span class="p">;</span>
+
+  <span class="c1">// csharp_style_prefer_pattern_matching = false</span>
+  <span class="kt">var</span> <span class="n">x</span> <span class="p">=</span> <span class="n">i</span> <span class="p">==</span> <span class="k">default</span> <span class="p">||</span> <span class="n">i</span> <span class="p">&gt;</span> <span class="k">default</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+  <span class="kt">var</span> <span class="n">y</span> <span class="p">=</span> <span class="p">!(</span><span class="n">o</span> <span class="k">is</span> <span class="n">C</span> <span class="n">c</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0066#csharp_style_prefer_switch_expression">csharp_style_prefer_switch_expression</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_prefer_switch_expression = true</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="k">switch</span>
+  <span class="p">{</span>
+      <span class="m">1</span> <span class="p">=&gt;</span> <span class="m">1</span> <span class="p">*</span> <span class="m">1</span><span class="p">,</span>
+      <span class="m">2</span> <span class="p">=&gt;</span> <span class="m">2</span> <span class="p">*</span> <span class="m">2</span><span class="p">,</span>
+      <span class="n">_</span> <span class="p">=&gt;</span> <span class="m">0</span><span class="p">,</span>
+  <span class="p">};</span>
+
+  <span class="c1">// csharp_style_prefer_switch_expression = false</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+          <span class="k">return</span> <span class="m">1</span> <span class="p">*</span> <span class="m">1</span><span class="p">;</span>
+      <span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+          <span class="k">return</span> <span class="m">2</span> <span class="p">*</span> <span class="m">2</span><span class="p">;</span>
+      <span class="k">default</span><span class="p">:</span>
+          <span class="k">return</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="this-and-me-preferences">this. and Me. preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dotnet_style_qualification_for_event</span>    <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">error</span>
+<span class="n">dotnet_style_qualification_for_field</span>    <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">error</span>
+<span class="n">dotnet_style_qualification_for_method</span>   <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">error</span>
+<span class="n">dotnet_style_qualification_for_property</span> <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">error</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0003-ide0009#dotnet_style_qualification_for_event">dotnet_style_qualification_for_event</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_qualification_for_event = true</span>
+  <span class="k">this</span><span class="p">.</span><span class="n">Elapsed</span> <span class="p">+=</span> <span class="n">Handler</span><span class="p">;</span>
+    
+  <span class="c1">// dotnet_style_qualification_for_event = false</span>
+  <span class="n">Elapsed</span> <span class="p">+=</span> <span class="n">Handler</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0003-ide0009#dotnet_style_qualification_for_field">dotnet_style_qualification_for_field</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_qualification_for_field = true</span>
+  <span class="k">this</span><span class="p">.</span><span class="n">capacity</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    
+  <span class="c1">// dotnet_style_qualification_for_field = false</span>
+  <span class="n">capacity</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0003-ide0009#dotnet_style_qualification_for_method">dotnet_style_qualification_for_method</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_qualification_for_method = true</span>
+  <span class="k">this</span><span class="p">.</span><span class="nf">Display</span><span class="p">();</span>
+    
+  <span class="c1">// dotnet_style_qualification_for_method = false</span>
+  <span class="nf">Display</span><span class="p">();</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0003-ide0009#dotnet_style_qualification_for_property">dotnet_style_qualification_for_property</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_style_qualification_for_property = true</span>
+  <span class="k">this</span><span class="p">.</span><span class="n">ID</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+    
+  <span class="c1">// dotnet_style_qualification_for_property = false</span>
+  <span class="n">ID</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="organize-usings">Organize usings</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_using_directive_placement</span>        <span class="p">=</span> <span class="n">outside_namespace</span> <span class="p">:</span> <span class="n">error</span>
+<span class="n">dotnet_separate_import_directive_groups</span> <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">warning</span>
+<span class="n">dotnet_sort_system_directives_first</span>     <span class="p">=</span> <span class="k">true</span> <span class="p">:</span> <span class="n">warning</span>
+<span class="n">file_header_template</span>                    <span class="p">=</span> <span class="n">unset</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#using-directive-options">csharp_using_directive_placement</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_using_directive_placement = outside_namespace</span>
+  <span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+
+  <span class="k">namespace</span> <span class="nn">Conventions</span>
+  <span class="p">{</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_using_directive_placement = inside_namespace</span>
+  <span class="k">namespace</span> <span class="nn">Conventions</span>
+  <span class="p">{</span>
+      <span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#dotnet_separate_import_directive_groups">dotnet_separate_import_directive_groups</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_separate_import_directive_groups = true</span>
+  <span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+  <span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+    
+  <span class="k">using</span> <span class="nn">Octokit</span><span class="p">;</span>
+    
+  <span class="c1">// dotnet_separate_import_directive_groups = false</span>
+  <span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+  <span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+  <span class="k">using</span> <span class="nn">Octokit</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#dotnet_sort_system_directives_first">dotnet_sort_system_directives_first</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_sort_system_directives_first = true</span>
+  <span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+  <span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+  <span class="k">using</span> <span class="nn">Octokit</span><span class="p">;</span>
+    
+  <span class="c1">// dotnet_sort_system_directives_first = false</span>
+  <span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+  <span class="k">using</span> <span class="nn">Octokit</span><span class="p">;</span>
+  <span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0073#file_header_template">file_header_template</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// file_header_template = Copyright (c) SomeCorp. All rights reserved.\nLicensed under the xyz license.</span>
+
+  <span class="c1">// Copyright (c) SomeCorp. All rights reserved.\nLicensed under the xyz license.</span>
+  <span class="k">namespace</span> <span class="nn">N1</span>
+  <span class="p">{</span>
+      <span class="k">class</span> <span class="nc">C1</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// file_header_template = unset</span>
+  <span class="c1">//      OR</span>
+  <span class="c1">// file_header_template =</span>
+  <span class="k">namespace</span> <span class="nn">N2</span>
+  <span class="p">{</span>
+      <span class="k">class</span> <span class="nc">C2</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="parameter-preferences">Parameter preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dotnet_code_quality_unused_parameters</span>									<span class="p">=</span> <span class="n">all</span> <span class="p">:</span> <span class="n">suggestion</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0060#dotnet_code_quality_unused_parameters">dotnet_code_quality_unused_parameters (IDE0060)</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// dotnet_code_quality_unused_parameters = all</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="nf">GetNum1</span><span class="p">(</span><span class="kt">int</span> <span class="n">unusedParam</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="m">1</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">internal</span> <span class="kt">int</span> <span class="nf">GetNum2</span><span class="p">(</span><span class="kt">int</span> <span class="n">unusedParam</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="m">1</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">private</span> <span class="kt">int</span> <span class="nf">GetNum3</span><span class="p">(</span><span class="kt">int</span> <span class="n">unusedParam</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="m">1</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="c1">// dotnet_code_quality_unused_parameters = non_public</span>
+  <span class="k">internal</span> <span class="kt">int</span> <span class="nf">GetNum4</span><span class="p">(</span><span class="kt">int</span> <span class="n">unusedParam</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="m">1</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">private</span> <span class="kt">int</span> <span class="nf">GetNum5</span><span class="p">(</span><span class="kt">int</span> <span class="n">unusedParam</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="m">1</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="spacing">Spacing</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_space_after_cast</span>                                                     <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_after_colon_in_inheritance_clause</span>                              <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_space_after_comma</span>                                                    <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_space_after_dot</span>                                                      <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_after_keywords_in_control_flow_statements</span>                      <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_space_after_semicolon_in_for_statement</span>                               <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_space_around_binary_operators</span>                                        <span class="p">=</span> <span class="n">before_and_after</span>
+<span class="n">csharp_space_around_declaration_statements</span>                                  <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_before_colon_in_inheritance_clause</span>                             <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_space_before_comma</span>                                                   <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_before_dot</span>                                                     <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_before_open_square_brackets</span>                                    <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_before_semicolon_in_for_statement</span>                              <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_between_empty_square_brackets</span>                                  <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_between_method_call_empty_parameter_list_parentheses</span>           <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_between_method_call_name_and_opening_parenthesis</span>               <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_between_method_call_parameter_list_parentheses</span>                 <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_between_method_declaration_empty_parameter_list_parentheses</span>    <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_between_method_declaration_name_and_open_parenthesis</span>           <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_between_method_declaration_parameter_list_parentheses</span>          <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_between_parentheses</span>                                            <span class="p">=</span> <span class="k">false</span>
+<span class="n">csharp_space_between_square_brackets</span>                                        <span class="p">=</span> <span class="k">false</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_after_cast">csharp_space_after_cast</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_after_cast = true</span>
+  <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">x</span><span class="p">;</span>
+
+  <span class="c1">// csharp_space_after_cast = false</span>
+  <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_after_keywords_in_control_flow_statements">csharp_space_after_keywords_in_control_flow_statements</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_after_keywords_in_control_flow_statements = true</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">;</span><span class="n">i</span><span class="p">&lt;</span><span class="n">x</span><span class="p">;</span><span class="n">i</span><span class="p">++)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+
+  <span class="c1">// csharp_space_after_keywords_in_control_flow_statements = false</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">;</span><span class="n">i</span><span class="p">&lt;</span><span class="n">x</span><span class="p">;</span><span class="n">i</span><span class="p">++)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_between_parentheses">csharp_space_between_parentheses</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_between_parentheses = control_flow_statements</span>
+  <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="p">++</span> <span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="c1">// csharp_space_between_parentheses = expressions</span>
+  <span class="kt">var</span> <span class="n">z</span> <span class="p">=</span> <span class="p">(</span> <span class="n">x</span> <span class="p">*</span> <span class="n">y</span> <span class="p">)</span> <span class="p">-</span> <span class="p">(</span> <span class="p">(</span> <span class="n">y</span> <span class="p">-</span> <span class="n">x</span> <span class="p">)</span> <span class="p">*</span> <span class="m">3</span> <span class="p">);</span>
+
+  <span class="c1">// csharp_space_between_parentheses = type_casts</span>
+  <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="p">(</span> <span class="kt">int</span> <span class="p">)</span><span class="n">x</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_before_colon_in_inheritance_clause">csharp_space_before_colon_in_inheritance_clause</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_before_colon_in_inheritance_clause = true</span>
+  <span class="k">interface</span> <span class="nc">I</span>
+  <span class="p">{</span>
+
+  <span class="p">}</span>
+
+  <span class="k">class</span> <span class="nc">C</span> <span class="p">:</span> <span class="n">I</span>
+  <span class="p">{</span>
+
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_space_before_colon_in_inheritance_clause = false</span>
+  <span class="k">interface</span> <span class="nc">I</span>
+  <span class="p">{</span>
+
+  <span class="p">}</span>
+
+  <span class="k">class</span> <span class="nc">C</span><span class="p">:</span> <span class="n">I</span>
+  <span class="p">{</span>
+
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_after_colon_in_inheritance_clause">csharp_space_after_colon_in_inheritance_clause</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_after_colon_in_inheritance_clause = true</span>
+  <span class="k">interface</span> <span class="nc">I</span>
+  <span class="p">{</span>
+
+  <span class="p">}</span>
+
+  <span class="k">class</span> <span class="nc">C</span> <span class="p">:</span> <span class="n">I</span>
+  <span class="p">{</span>
+
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_space_after_colon_in_inheritance_clause = false</span>
+  <span class="k">interface</span> <span class="nc">I</span>
+  <span class="p">{</span>
+
+  <span class="p">}</span>
+
+  <span class="k">class</span> <span class="nc">C</span> <span class="p">:</span><span class="n">I</span>
+  <span class="p">{</span>
+
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_around_binary_operators">csharp_space_around_binary_operators</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_around_binary_operators = before_and_after</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="p">*</span> <span class="p">(</span><span class="n">x</span> <span class="p">-</span> <span class="n">y</span><span class="p">);</span>
+
+  <span class="c1">// csharp_space_around_binary_operators = none</span>
+  <span class="k">return</span> <span class="n">x</span><span class="p">*(</span><span class="n">x</span><span class="p">-</span><span class="n">y</span><span class="p">);</span>
+
+  <span class="c1">// csharp_space_around_binary_operators = ignore</span>
+  <span class="k">return</span> <span class="n">x</span>  <span class="p">*</span>  <span class="p">(</span><span class="n">x</span><span class="p">-</span><span class="n">y</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_between_method_declaration_parameter_list_parentheses">csharp_space_between_method_declaration_parameter_list_parentheses</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_between_method_declaration_parameter_list_parentheses = true</span>
+  <span class="k">void</span> <span class="nf">Bark</span><span class="p">(</span> <span class="kt">int</span> <span class="n">x</span> <span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+
+  <span class="c1">// csharp_space_between_method_declaration_parameter_list_parentheses = false</span>
+  <span class="k">void</span> <span class="nf">Bark</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_between_method_declaration_empty_parameter_list_parentheses">csharp_space_between_method_declaration_empty_parameter_list_parentheses</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_between_method_declaration_empty_parameter_list_parentheses = true</span>
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">(</span> <span class="p">)</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_space_between_method_declaration_empty_parameter_list_parentheses = false</span>
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">();</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_between_method_declaration_name_and_open_parenthesis">csharp_space_between_method_declaration_name_and_open_parenthesis</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_between_method_declaration_name_and_open_parenthesis = true</span>
+  <span class="k">void</span> <span class="nf">M</span> <span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+
+  <span class="c1">// csharp_space_between_method_declaration_name_and_open_parenthesis = false</span>
+  <span class="k">void</span> <span class="nf">M</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_between_method_call_parameter_list_parentheses">csharp_space_between_method_call_parameter_list_parentheses</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_between_method_call_parameter_list_parentheses = true</span>
+  <span class="nf">MyMethod</span><span class="p">(</span> <span class="n">argument</span> <span class="p">);</span>
+
+  <span class="c1">// csharp_space_between_method_call_parameter_list_parentheses = false</span>
+  <span class="nf">MyMethod</span><span class="p">(</span><span class="n">argument</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_between_method_call_empty_parameter_list_parentheses">csharp_space_between_method_call_empty_parameter_list_parentheses</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_between_method_call_empty_parameter_list_parentheses = true</span>
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">(</span> <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_space_between_method_call_empty_parameter_list_parentheses = false</span>
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">();</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_between_method_call_name_and_opening_parenthesis">csharp_space_between_method_call_name_and_opening_parenthesis</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_between_method_call_name_and_opening_parenthesis = true</span>
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span> <span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span> <span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_space_between_method_call_name_and_opening_parenthesis = false</span>
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">void</span> <span class="nf">Goo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="nf">Goo</span><span class="p">();</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_after_comma">csharp_space_after_comma</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_after_comma = true</span>
+  <span class="kt">int</span><span class="p">[]</span> <span class="n">x</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
+
+  <span class="c1">// csharp_space_after_comma = false</span>
+  <span class="kt">int</span><span class="p">[]</span> <span class="n">x</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_before_comma">csharp_space_before_comma</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_before_comma = true</span>
+  <span class="kt">int</span><span class="p">[]</span> <span class="n">x</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span> <span class="p">,</span> <span class="m">2</span> <span class="p">,</span> <span class="m">3</span> <span class="p">,</span> <span class="m">4</span> <span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
+
+  <span class="c1">// csharp_space_before_comma = false</span>
+  <span class="kt">int</span><span class="p">[]</span> <span class="n">x</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_after_dot">csharp_space_after_dot</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_after_dot = true</span>
+  <span class="k">this</span><span class="p">.</span> <span class="nf">Goo</span><span class="p">();</span>
+
+  <span class="c1">// csharp_space_after_dot = false</span>
+  <span class="k">this</span><span class="p">.</span><span class="nf">Goo</span><span class="p">();</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_before_dot">csharp_space_before_dot</a></p>
+
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_before_dot = true</span>
+  <span class="k">this</span> <span class="p">.</span><span class="nf">Goo</span><span class="p">();</span>
+
+  <span class="c1">// csharp_space_before_dot = false</span>
+  <span class="k">this</span><span class="p">.</span><span class="nf">Goo</span><span class="p">();</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_after_semicolon_in_for_statement">csharp_space_after_semicolon_in_for_statement</a></p>
+
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_after_semicolon_in_for_statement = true</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+
+  <span class="c1">// csharp_space_after_semicolon_in_for_statement = false</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span><span class="n">i</span> <span class="p">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span><span class="n">i</span><span class="p">++)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_before_semicolon_in_for_statement">csharp_space_before_semicolon_in_for_statement</a></p>
+
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_before_semicolon_in_for_statement = true</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span> <span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Length</span> <span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+
+  <span class="c1">// csharp_space_before_semicolon_in_for_statement = false</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_around_declaration_statements">csharp_space_around_declaration_statements</a></p>
+
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_around_declaration_statements = ignore</span>
+  <span class="kt">int</span>    <span class="n">x</span>    <span class="p">=</span>    <span class="m">0</span>   <span class="p">;</span>
+
+  <span class="c1">// csharp_space_around_declaration_statements = false</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_before_open_square_brackets">csharp_space_before_open_square_brackets</a></p>
+
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_before_open_square_brackets = true</span>
+  <span class="kt">int</span> <span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
+
+  <span class="c1">// csharp_space_before_open_square_brackets = false</span>
+  <span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_between_empty_square_brackets">csharp_space_between_empty_square_brackets</a></p>
+
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_between_empty_square_brackets = true</span>
+  <span class="kt">int</span><span class="p">[</span> <span class="p">]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span> <span class="p">]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
+
+  <span class="c1">// csharp_space_between_empty_square_brackets = false</span>
+  <span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span> <span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_space_between_square_brackets">csharp_space_between_square_brackets</a></p>
+
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_space_between_square_brackets = true</span>
+  <span class="kt">int</span> <span class="n">index</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">[</span> <span class="m">0</span> <span class="p">];</span>
+    
+  <span class="c1">// csharp_space_between_square_brackets = false</span>
+  <span class="kt">int</span> <span class="n">index</span> <span class="p">=</span> <span class="n">numbers</span><span class="p">[</span><span class="m">0</span><span class="p">];</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="suppression-preferences">Suppression preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dotnet_remove_unnecessary_suppression_exclusions</span>    <span class="p">=</span> <span class="n">none</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0079#dotnet_remove_unnecessary_suppression_exclusions">dotnet_remove_unnecessary_suppression_exclusions (IDE0079)</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">using</span> <span class="nn">System.Diagnostics.CodeAnalysis</span><span class="p">;</span>
+
+  <span class="k">class</span> <span class="nc">C1</span>
+  <span class="p">{</span>
+      <span class="c1">// 'dotnet_remove_unnecessary_suppression_exclusions = IDE0051'</span>
+
+      <span class="c1">// Unnecessary pragma suppression, but not flagged by IDE0079</span>
+  <span class="err">#</span><span class="n">pragma</span> <span class="n">warning</span> <span class="n">disable</span> <span class="n">IDE0051</span> <span class="c1">// IDE0051: Remove unused member</span>
+      <span class="k">private</span> <span class="kt">int</span> <span class="nf">UsedMethod</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="m">0</span><span class="p">;</span>
+  <span class="err">#</span><span class="n">pragma</span> <span class="n">warning</span> <span class="n">restore</span> <span class="n">IDE0051</span>
+
+      <span class="k">public</span> <span class="kt">int</span> <span class="nf">PublicMethod</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="nf">UsedMethod</span><span class="p">();</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="unnecessary-expression-preferences">Unnecessary expression preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_style_unused_value_expression_statement_preference</span>       <span class="p">=</span> <span class="n">discard_variable</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">visual_basic_style_unused_value_expression_statement_preference</span> <span class="p">=</span> <span class="n">unused_local_variable</span> <span class="p">:</span> <span class="n">silent</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0059#csharp_style_unused_value_assignment_preference">csharp_style_unused_value_assignment_preference (IDE0059)</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_unused_value_assignment_preference = discard_variable</span>
+  <span class="kt">int</span> <span class="nf">GetCount</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;</span> <span class="n">wordCount</span><span class="p">,</span> <span class="kt">string</span> <span class="n">searchWord</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">_</span> <span class="p">=</span> <span class="n">wordCount</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">searchWord</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">count</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// csharp_style_unused_value_assignment_preference = unused_local_variable</span>
+  <span class="kt">int</span> <span class="nf">GetCount</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">int</span><span class="p">&gt;</span> <span class="n">wordCount</span><span class="p">,</span> <span class="kt">string</span> <span class="n">searchWord</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="kt">var</span> <span class="n">unused</span> <span class="p">=</span> <span class="n">wordCount</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">searchWord</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">count</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0058#csharp_style_unused_value_expression_statement_preference">csharp_style_unused_value_expression_statement_preference (IDE0058)</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Original code:</span>
+  <span class="n">System</span><span class="p">.</span><span class="n">Convert</span><span class="p">.</span><span class="nf">ToInt32</span><span class="p">(</span><span class="s">"35"</span><span class="p">);</span>
+
+  <span class="c1">// After code fix for IDE0058:</span>
+
+  <span class="c1">// csharp_style_unused_value_expression_statement_preference = discard_variable</span>
+  <span class="n">_</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Convert</span><span class="p">.</span><span class="nf">ToInt32</span><span class="p">(</span><span class="s">"35"</span><span class="p">);</span>
+
+  <span class="c1">// csharp_style_unused_value_expression_statement_preference = unused_local_variable</span>
+  <span class="kt">var</span> <span class="n">unused</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="nf">ToInt32</span><span class="p">(</span><span class="s">"35"</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0059#visual_basic_style_unused_value_assignment_preference">visual_basic_style_unused_value_assignment_preference (IDE0059)</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="err">'</span> <span class="n">visual_basic_style_unused_value_assignment_preference</span> <span class="p">=</span> <span class="n">unused_local_variable</span>
+  <span class="n">Dim</span> <span class="n">unused</span> <span class="p">=</span> <span class="nf">Computation</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0058#visual_basic_style_unused_value_expression_statement_preference">visual_basic_style_unused_value_expression_statement_preference (IDE0058)</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="err">'</span> <span class="n">visual_basic_style_unused_value_expression_statement_preference</span> <span class="p">=</span> <span class="n">unused_local_variable</span>
+  <span class="n">Dim</span> <span class="n">unused</span> <span class="p">=</span> <span class="nf">Computation</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="var-preferences">var preferences</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_style_var_elsewhere</span>              <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_var_for_built_in_types</span>     <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">silent</span>
+<span class="n">csharp_style_var_when_type_is_apparent</span>  <span class="p">=</span> <span class="k">false</span> <span class="p">:</span> <span class="n">silent</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0007-ide0008#csharp_style_var_elsewhere">csharp_style_var_elsewhere</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_var_elsewhere = true</span>
+  <span class="kt">var</span> <span class="n">f</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">Init</span><span class="p">();</span>
+    
+  <span class="c1">// csharp_style_var_elsewhere = false</span>
+  <span class="kt">bool</span> <span class="n">f</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="nf">Init</span><span class="p">();</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0007-ide0008#csharp_style_var_for_built_in_types">csharp_style_var_for_built_in_types</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_var_for_built_in_types = true</span>
+  <span class="kt">var</span> <span class="n">x</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+    
+  <span class="c1">// csharp_style_var_for_built_in_types = false</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0007-ide0008#csharp_style_var_when_type_is_apparent">csharp_style_var_when_type_is_apparent</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// csharp_style_var_when_type_is_apparent = true</span>
+  <span class="kt">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">();</span>
+    
+  <span class="c1">// csharp_style_var_when_type_is_apparent = false</span>
+  <span class="n">Customer</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Customer</span><span class="p">();</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="wrapping">Wrapping</h3>
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">csharp_preserve_single_line_blocks</span>              <span class="p">=</span> <span class="k">true</span>
+<span class="n">csharp_preserve_single_line_statements</span>          <span class="p">=</span> <span class="k">false</span>
+<span class="n">dotnet_style_operator_placement_when_wrapping</span>   <span class="p">=</span> <span class="n">beginning_of_line</span>
+</code></pre></div></div>
+
+<ul>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_preserve_single_line_statements">csharp_preserve_single_line_statements</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//csharp_preserve_single_line_statements = true</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">"John"</span><span class="p">;</span>
+
+  <span class="c1">//csharp_preserve_single_line_statements = false</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+  <span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="s">"John"</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_preserve_single_line_blocks">csharp_preserve_single_line_blocks</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//csharp_preserve_single_line_blocks = true</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="n">Foo</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="c1">//csharp_preserve_single_line_blocks = false</span>
+  <span class="k">public</span> <span class="kt">int</span> <span class="n">MyProperty</span>
+  <span class="p">{</span>
+      <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><a href="">dotnet_style_operator_placement_when_wrapping</a>
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div>    </div>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Noest. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
