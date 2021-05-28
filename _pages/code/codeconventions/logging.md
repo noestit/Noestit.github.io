@@ -34,7 +34,7 @@ When a context logger per class is used, you can use this method:
 
 ```csharp
 // With log4net:
-class UserService
+public class UserService
 {
     private readonly ILog _logger;
 
@@ -50,7 +50,7 @@ class UserService
 }
 
 // With Serilog:
-class UserService
+public class UserService
 {
     private readonly ILogger _logger;
 
@@ -66,7 +66,7 @@ class UserService
 }
 
 // With Microsoft.Extensions.Logging
-class UserService
+public class UserService
 {
     private readonly ILogger<UserService> _logger;
 

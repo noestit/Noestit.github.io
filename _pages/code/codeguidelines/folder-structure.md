@@ -29,7 +29,7 @@ On disk, we want to keep unit-test projects separated from runtime projects wher
 | | └ Project1.Tests.csproj
 | ├ Project2.Tests/
 | | ├ ...
-| |  Project2.Tests.csproj
+| | └ Project2.Tests.csproj
 | └ ...
 ├ .gitignore
 ├ LICENSE (not needed for internal projects)
@@ -47,33 +47,36 @@ A typicall 3-tier application can be arranged like the example below:
 
 ```markdown
 ProjectName (solution folder)
-├ DataLayer (Project or Folder)
+├ DataLayer (Project)
 | ├ Repositories (folder)
 | | ├ ProductRepository.cs
 | | └ IProductRepository.cs
-| ├ Models (folder)
+| ├ Entities (folder)
 | | ├ Product.cs
 | | └ User.cs
 | └ DataAcces (folder)
-| ├ UnitOfWork.cs
-| └ IUnitOfWork.cs
-├ ServiceLayer (Folder)
+| | ├ UnitOfWork.cs
+| | └ IUnitOfWork.cs
+| └ ...
+├ ServiceLayer (Project)
 | ├ Services/
 | | ├ ProductService.cs
 | | └ UserService.cs
 | └ Utils/
-| ├ ViewModelFactory.cs
-| └ ProductLogic.cs
+| | ├ ViewModelFactory.cs
+| | └ ProductLogic.cs
+| └ ...
 ├ PresentationLayer (Web.UI Project)
 | ├ Views/
 | | ├ Index.cshtml
-| | └ _userPartial.cshtml
-| ├ Scripts/
+| | └ <_userPartial.cshtml>
+| ├ Scripts/ 
 | | ├ JavaScript.js
 | | └ jQuery.min.js
 | ├ Content/
 | | ├ Site.css
 | | └ Bootstrap.css
+| └ ...
 └ ...
 ```
 

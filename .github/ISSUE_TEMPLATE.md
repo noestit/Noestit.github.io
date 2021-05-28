@@ -14,8 +14,8 @@ _Put an `x` in the boxes that apply_
 #### Reasoning
 What is the motivation / use case for changing the guidelines?
 
-<If new idea or direction, please create a checklist of proposed ideas or next steps.
-[Example]
-- [ ] Task 1
-- [ ] Task 2
+<If new idea or direction, please create a checklist of proposed ideas or next steps.>\
+[Example] 
+- [ ] Task 1 
+- [ ] Task 2 
 - [ ] Task 3>

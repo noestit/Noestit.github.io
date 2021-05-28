@@ -184,7 +184,7 @@ A tuple is a data structure that contains a sequence of elements of different da
 Use the named members notation.
 
 ```csharp
-// BAD
+// Bad
  (string, int) person1 = ("John Doe", 31);
  Console.WriteLine($"Tuple with elements {person1.Item1} and {person1.Item2}.");
 
@@ -266,7 +266,7 @@ else
     second_expression;
 }
 
-// Ternary conditional expression (?:)
+// conditional (Ternary) expression (?:)
 IsValid ? expression : second_expression;
 ```
 

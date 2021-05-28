@@ -85,7 +85,7 @@ This operation is also called _non-destructive mutation_. The with-expression wo
 The `is` operator is used to check whether the result of an expression is compatible with the specified type. If on evaluation the expression can be converted the operator will return `true` if not it will return `false`;
 
 ```csharp
-if(obj is int){
+if (obj is int){
     Console.WriteLine("The object is of type int");
 }
 ```
