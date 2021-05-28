@@ -44,12 +44,20 @@ footer:
 include:
    [
       "_pages",
+      "assets",
       .editorconfig
    ]
+
 exclude:
-   Gemfile
-   LICENSE
-   README
+  [
+    changelog.md, 
+    LICENSE.txt, 
+    README.md, 
+    CONDUCT.MD, 
+    CONTRIBUTING.md,
+    Gemfile, 
+    Gemfile.lock
+  ]
 
 permalink: /:title/
 email: info@noest.it
