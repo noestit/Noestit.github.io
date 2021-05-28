@@ -10,6 +10,7 @@ subtitle: Code conventions, best practices and configuration files.
 name: Noest
 description: This is the document site of Noest.
 url: "https://noest.it"
+baseurl: /
 repository: "https://github.com/noestit/Noestit.github.io/"
 logo: 'assets/images/Block_Logo_Green.png'
 words_per_minute: 200
@@ -29,23 +30,23 @@ footer:
         url: "https://twitter.com/teamnoest"
       - label: "Facebook"
         icon: "fab fa-fw fa-facebook-square"
-        url: "https://www.facebook.com/teamnoest/"
+        url: "https://www.facebook.com/teamnoest"
       - label: "GitHub"
         icon: "fab fa-fw fa-github"
-        url: "https://github.com/noestit/"
+        url: "https://github.com/noestit"
       - label: "Linkedin"
         icon: "fab fa-fw fa-linkedin"
-        url: "https://www.linkedin.com/company/teamnoest/mycompany/"
+        url: "https://www.linkedin.com/company/teamnoest/mycompany"
       - label: "Instagram"
         icon: "fab fa-fw fa-instagram"
-        url: "https://www.instagram.com/teamnoest/"
+        url: "https://www.instagram.com/teamnoest"
 
 # Reading Files
 include:
    [
       "_pages",
       "assets",
-      .editorconfig
+      .editorconfig,
    ]
 
 exclude:
@@ -56,7 +57,7 @@ exclude:
     CONDUCT.MD, 
     CONTRIBUTING.md,
     Gemfile, 
-    Gemfile.lock
+    Gemfile.lock,
   ]
 
 permalink: /:title/
