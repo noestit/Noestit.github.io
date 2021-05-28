@@ -67,7 +67,7 @@ ProjectName (solution folder)
 ├ PresentationLayer (Web.UI Project)
 | ├ Views/
 | | ├ Index.cshtml
-| | └ \_userPartial.cshtml
+| | └ _userPartial.cshtml
 | ├ Scripts/
 | | ├ JavaScript.js
 | | └ jQuery.min.js

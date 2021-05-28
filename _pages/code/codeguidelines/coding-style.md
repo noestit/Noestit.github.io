@@ -296,8 +296,6 @@ if (something != null)
 // Null-coalescing (??) operator
 return something ?? string.empty;
 
-
-
 int? number = null;
 var n = number.HasValue ? number : 0;
 
@@ -331,10 +329,10 @@ Avoid using '+' to concatenate text into a new string.
 string name = "John";
 string greetings = "Hello " + name + "!";
 
-//Good: string.Format()
+// Good: string.Format()
 string greetingFormat = string.Format("Hello {0}!", name);
 
-//Better: string interpolation (${})
+// Better: string interpolation (${})
 string greeting = $"Hello, {name}!";
 ```
 

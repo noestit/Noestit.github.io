@@ -105,7 +105,7 @@ var word = (string)obj;
 SomeClass someObject = (SomeClass)obj;
 
 
-//As operator
+// As operator
 object obj = "Noest";
 var word = obj as string;
 

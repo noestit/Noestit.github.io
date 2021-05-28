@@ -17,7 +17,6 @@ Because we come from a variety of backgrounds, we don't want to assume that ever
 
 In general: treat others how you would like to be treated, were you in their place. Don't be a jerk. _Do_ ask questions. _Do_ keep conflicts productively focused on technical issues. _Do_ think before you speak; remember that what is perceived as a funny witticism in your group of friends might be hurtful or reinforce hurtful stereotypes in the context of our diverse online community. _Do_ remember that we are all people, not robots, and all equally deserving of sensitivity and respect. (If and when robots join our community, let's treat them with respect too!)
 
-
 ### What will organizers do about inappropriate behavior?
 
 If we notice you doing or saying something inappropriate, an organizer will explain why it's inappropriate and ask you to stop. We won't demonize or vilify you. But please do stop the inappropriate behavior so we can get back to writing and discussing code in a safe environment. If you have philosophical disagreements about what's actually inappropriate, please take them to a separate public or private conversation with an Appium maintainer so we don't turn pull requests into an ethics debate.

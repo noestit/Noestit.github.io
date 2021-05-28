@@ -183,11 +183,11 @@ In the controller, we can check if the `modelstate` is valid. `ModelState.IsVali
 [HttpPost]
 public ActionResult CreateUser(CreateUserViewModel createUserForm)
 {
-    if(!ModelState.IsValid)
+    if (!ModelState.IsValid)
     {
-        //Code to handle invalid form
+        // Code to handle invalid form
     }
 
-    //Code to create user
+    // Code to create user
 }
 ```

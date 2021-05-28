@@ -11,7 +11,7 @@ toc_sticky: true
 ---
 
 ## EditorConfig file
-nog wa nieuws
+
 
 ## .NET Coding Conventions
 [*.{cs,vb}] for all C# and VB files.

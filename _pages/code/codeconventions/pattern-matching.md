@@ -20,11 +20,11 @@ The `is` and switch statements support pattern matching. The `is` keyword suppor
 - `type` pattern: tests if an expression can be converted to a specified type. If so it casts to a variable of that type.
 
 ```csharp
-if(obj is int i)
+if (obj is int i)
   Console.Writeline("obj is an integer with value {i}");
 
 // Cast to int via as keyword
-if(obj is int){
+if (obj is int){
     int i = obj as int;
     Console.Writeline("obj is an integer with value {i}");
 }
@@ -35,15 +35,15 @@ if(obj is int){
 ```csharp
 const int threeDiceHighRoll = 18;
 
-if(diceRoll is threeDiceHighRoll ){
+if (diceRoll is threeDiceHighRoll ){
   Console.WriteLine("To the max!");
 }
 
-if(diceRoll is 3){
+if (diceRoll is 3){
     Console.WriteLine("Triple one");
 }
 
-if(diceRoll is null){
+if (diceRoll is null){
     Console.WriteLine("Did the die land on its corner?");
 }
 ```
@@ -66,7 +66,7 @@ if (shape is Square { Side: var side } square && side % 2 == 0)
 [C# 7](csharp7)
 
 ```csharp
-switch(obj){
+switch (obj){
   case string text:
       Console.Writeline("obj is a string with value {text}");
   case int number:
@@ -79,7 +79,7 @@ switch(obj){
 `When` pattern allows you to have additional conditions on the switch case.
 
 ```csharp
-switch(number)
+switch (number)
 {
   case int value when value <= 0:
       Console.WriteLine("Less than or equal to 0");
@@ -94,7 +94,7 @@ switch(number)
 ```
 
 ```csharp
-switch(shape)
+switch (shape)
 {
   case Circle c:
       Console.Writeline($"circle with radius {c.Radius}");
@@ -155,7 +155,7 @@ public static bool isNetDeveloper(Developer developer){
 }
 ```
 
-You will think you can achieve the same by chaining the properties. `if(developer.Language == ".NET")`. Indeed but there will be certain cases where this comes in handy. What if we also want to check the age of the person?
+You will think you can achieve the same by chaining the properties. `if (developer.Language == ".NET")`. Indeed but there will be certain cases where this comes in handy. What if we also want to check the age of the person?
 
 Consider this switch expression. First we use a type pattern to cast it to a `Point` (we did it twice) and with the when expression we added additional conditions.
 
@@ -215,7 +215,7 @@ if (person is Person(string name, int age))
     Console.WriteLine($"Person with name {name} is {age} years old");
 }
 
-if(person is (_, 65)){
+if (person is (_, 65)){
     Console.WriteLine("You used to call me on the landline");
 }
 ```
@@ -252,12 +252,12 @@ Via the `not` keyword, the negated pattern helps to clarify, among other things,
 
 ```csharp
 
-if(!(language is null)){
+if (!(language is null)){
     // Do something
 }
 
 // becomes
-if(language is not null){
+if (language is not null){
     // Do something
 }
 ```
