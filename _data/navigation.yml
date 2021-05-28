@@ -1,0 +1,49 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Tooling"
+    url: /tooling/index
+  - title: "Documentation"
+    url: /documentationtechniques/index
+  - title: "Code"
+    url: /code/index
+     
+tooling:
+  - title: "EditorConfig"
+    children:
+    - title: "Base setup"
+      url: /tooling/editorconfig/core-options
+    - title: "Coding Conventions"
+      url: /tooling/editorconfig/coding-conventions
+
+documentationtechniques:
+  - title: "Architectural decision records"
+    children:
+    - title: "Main"
+      url: /documentationtechniques/adr/architectural-decision-record
+    - title: "Template"
+      url: /documentationtechniques/adr/template
+
+code:
+   - title: "Code Conventions"
+     children:
+      - title: "Main"
+        url: /code/codeconventions/conventions
+      - title: "Best practices"
+        url: /code/codeconventions/best-practices
+      - title: "EF & Linq"
+        url: /code/codeconventions/entity-framework-linq
+      - title: "Logging"
+        url: /code/codeconventions/logging
+      - title: "Pattern matching"
+        url: /code/codeconventions/pattern-matching
+      - title: "TDD unit testing"
+        url: /code/codeconventions/tdd-unit-testing
+   - title: "Code Guidelines"
+     children:
+      - title: "Coding Style"
+        url: /code/codeguidelines/coding-style
+      - title: "Folder structure"
+        url: /code/codeguidelines/folder-structure
+      - title: "Globalization"
+        url: /code/codeguidelines/globalization

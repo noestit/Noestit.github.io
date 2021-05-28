@@ -1,10 +1,10 @@
 ---
 layout: single
 title: 'EditorConfig Core options'
-permalink: /editorconfig/core-options
+permalink: /tooling/editorconfig/core-options
 
 sidebar:
-  nav: "editorconfig"
+  nav: "tooling"
 
 toc: true
 toc_sticky: true

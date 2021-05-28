@@ -1,6 +1,7 @@
 ---
 layout: home
 title: 'Noest Home'
+permalink: /
 ---
 
 # Noest GitHub Pages

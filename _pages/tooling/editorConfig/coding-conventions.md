@@ -1,14 +1,17 @@
 ---
 layout: single
 title: 'EditorConfig Coding conventions'
-permalink: /editorconfig/coding-conventions
+permalink: /tooling/editorconfig/coding-conventions
 
 sidebar:
-  nav: "editorconfig"
+  nav: "tooling"
 
 toc: true
 toc_sticky: true
 ---
+
+## EditorConfig file
+
 
 ## .NET Coding Conventions
 [*.{cs,vb}] for all C# and VB files.
