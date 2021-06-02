@@ -1,5 +1,4 @@
 ## Overview
-**TM;DR**
 
 * **I'm submitting a ...**
 _Put an `x` in the boxes that apply_
