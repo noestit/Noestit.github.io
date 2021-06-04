@@ -55,6 +55,6 @@ exclude:
 permalink: /:title/
 email: info@noest.it
 
-
 plugins:
    - jekyll-include-cache
+   - jekyll-remote-theme
